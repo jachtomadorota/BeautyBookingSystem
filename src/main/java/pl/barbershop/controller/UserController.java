@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.barbershop.model.User;
@@ -39,20 +40,30 @@ public class UserController {
         }
         UserRole userRole = new UserRole();
         userRole.setUsername(user.getEmail());
-        userRole.setRole("USER");
+        userRole.setRole("ROLE_USER");
+        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         userRepository.save(user);
         userRoleRepository.save(userRole);
-        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
         return "redirect:/homepage";
     }
 
     @GetMapping("/login")
-    public String loginUserGet(Model model){
-        return "login-user";
+    public String login(Model model) {
+        model.addAttribute("user", new User());
+        return "login";
     }
 
     @PostMapping("/login")
-    public String loginUserPost(){
+    public String login(@ModelAttribute @Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "login-user";
+        }
+        User userDb = userRepository.findByEmail(user.getEmail());
+        boolean logged = userDb != null && BCrypt.checkpw(user.getPassword(), userDb.getPassword());
+        if (!logged) {
+            return "login-user";
+        }
         return "redirect:/homepage";
     }
+
 }

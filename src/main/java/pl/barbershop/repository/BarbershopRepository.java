@@ -7,4 +7,6 @@ import javax.transaction.Transactional;
 
 @Transactional
 public interface BarbershopRepository extends JpaRepository<Barbershop,Long> {
+
+    Barbershop findByNip(String nip);
 }

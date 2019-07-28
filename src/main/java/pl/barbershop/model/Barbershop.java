@@ -1,11 +1,13 @@
 package pl.barbershop.model;
 
+import net.bytebuddy.asm.Advice;
+import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.pl.NIP;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.Set;
 
 @Entity
@@ -18,8 +20,8 @@ public class Barbershop {
     @NotBlank
     private String address;
     
-    @ManyToOne
-    private City city;
+    @NotBlank
+    private String city;
     
     @Size(min = 9,max = 9)
     private String phoneNumber;
@@ -31,10 +33,10 @@ public class Barbershop {
     Set<Service> services;
     
     @NotBlank
-    private Time open;
+    private String open;
     
     @NotBlank
-    private Time close;
+    private String close;
     
     @ManyToMany
     Set<Date> dates;
@@ -51,7 +53,11 @@ public class Barbershop {
     
     @NIP
     @NotBlank
+    @Column(unique = true)
     private String nip;
+
+    @ColumnDefault("1")
+    private int enabled;
 
     public Long getId() {
         return id;
@@ -69,11 +75,11 @@ public class Barbershop {
         this.address = address;
     }
 
-    public City getCity() {
+    public String getCity() {
         return city;
     }
 
-    public void setCity(City city) {
+    public void setCity(String city) {
         this.city = city;
     }
 
@@ -101,19 +107,19 @@ public class Barbershop {
         this.services = services;
     }
 
-    public Time getOpen() {
+    public String getOpen() {
         return open;
     }
 
-    public void setOpen(Time open) {
+    public void setOpen(String open) {
         this.open = open;
     }
 
-    public Time getClose() {
+    public String getClose() {
         return close;
     }
 
-    public void setClose(Time close) {
+    public void setClose(String close) {
         this.close = close;
     }
 
@@ -156,4 +162,13 @@ public class Barbershop {
     public void setNip(String nip) {
         this.nip = nip;
     }
+
+    public int getEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(int enabled) {
+        this.enabled = enabled;
+    }
+
 }

@@ -43,7 +43,6 @@ public class User {
     @OneToOne
     private Reservation reservation;
 
-    @NotBlank
     @ColumnDefault("1")
     private int enabled;
 
