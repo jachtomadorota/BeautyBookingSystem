@@ -1021,7 +1021,7 @@
     </column>
     <column id="265" parent="244" name="close">
       <Position>4</Position>
-      <DataType>time|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1046,7 +1046,7 @@
     </column>
     <column id="269" parent="244" name="open">
       <Position>8</Position>
-      <DataType>time|0s</DataType>
+      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1440,9 +1440,8 @@ barbershops_id</ColNames>
     </column>
     <column id="340" parent="255" name="enabled">
       <Position>3</Position>
-      <DataType>int(11)|0s</DataType>
+      <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
-      <DefaultExpression>1</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="341" parent="255" name="firstName">

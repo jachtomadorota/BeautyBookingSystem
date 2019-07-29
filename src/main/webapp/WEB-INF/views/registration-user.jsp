@@ -16,7 +16,7 @@
 
 <form:form method="post" modelAttribute="user">
     <label for="enabledId"></label>
-    <form:input path="enabled" id="enabledId" type="hidden"/>
+    <form:input path="enabled" id="enabledId" type="checked"/>
     <label for="firstNameId">First Name</label>
     <form:input path="firstName" id="firstNameId" type="text"/>
     <form:errors path="firstName" element="div"></form:errors>

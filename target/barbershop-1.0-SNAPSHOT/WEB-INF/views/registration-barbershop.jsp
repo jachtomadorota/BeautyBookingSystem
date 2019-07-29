@@ -15,7 +15,7 @@
 
 <form:form method="post" modelAttribute="barbershop">
     <label for="enabledId"></label>
-    <form:input path="enabled" id="enabledId" type="hidden"/>
+    <form:input path="enabled" id="enabledId" type="checked"/>
     <label for="addressId">Address</label>
     <form:input path="address" id="addressId" type="text"/>
     <form:errors path="address" element="div"></form:errors>
@@ -47,13 +47,19 @@
     <br><br>
     <label for="descriptionId">Description</label>
     <form:textarea path="description" id="descriptionId" type="text"/>
-    <form:errors path="password" element="div"></form:errors>
+    <form:errors path="description" element="div"></form:errors>
     <br>
     <br><br>
     <label for="passwordId">Password</label>
     <form:input path="password" id="passwordId" type="password"/>
     <form:errors path="password" element="div"></form:errors>
     <br>
+    <br><br>
+    <label for="emailId">Email</label>
+    <form:input path="email" id="emailId" type="email"/>
+    <form:errors path="email" element="div"></form:errors>
+    <br>
+    <br><br>
 
     <input type="submit" value="Submit">
 </form:form>

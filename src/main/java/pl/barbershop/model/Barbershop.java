@@ -2,10 +2,12 @@ package pl.barbershop.model;
 
 import net.bytebuddy.asm.Advice;
 import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.pl.NIP;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.time.LocalTime;
 import java.util.Set;
@@ -31,7 +33,12 @@ public class Barbershop {
     
     @ManyToMany(mappedBy = "barbershops")
     Set<Service> services;
-    
+
+    @Email
+    @NotBlank
+    @Column(unique = true)
+    private String email;
+
     @NotBlank
     private String open;
     
@@ -56,8 +63,8 @@ public class Barbershop {
     @Column(unique = true)
     private String nip;
 
-    @ColumnDefault("1")
-    private int enabled;
+    @NotNull
+    private boolean enabled = true;
 
     public Long getId() {
         return id;
@@ -155,6 +162,14 @@ public class Barbershop {
         this.password = password;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     public String getNip() {
         return nip;
     }
@@ -163,12 +178,13 @@ public class Barbershop {
         this.nip = nip;
     }
 
-    public int getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(int enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
+
 
 }

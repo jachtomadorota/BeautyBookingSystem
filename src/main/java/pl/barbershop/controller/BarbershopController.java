@@ -2,21 +2,16 @@ package pl.barbershop.controller;
 
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.BarbershopRepository;
 import pl.barbershop.repository.UserRoleRepository;
-
 import javax.validation.Valid;
-import java.time.LocalTime;
+
 
 @Controller
 @RequestMapping("/barbershop")
@@ -48,7 +43,7 @@ public class BarbershopController {
         userRole.setRole("ROLE_BARBERSHOP");
         userRoleRepository.save(userRole);
         barbershopRepository.save(barbershop);
-        return "redirect:/homepage";
+        return "redirect:/";
     }
 
     @PostMapping("/login")
@@ -61,8 +56,22 @@ public class BarbershopController {
         if (!logged) {
             return "login-barbershop";
         }
-        return "redirect:/homepage";
+        return "redirect:/";
     }
+
+    @GetMapping("/list/{city}")
+    public String showBarbershopsByCity(@PathVariable String city){
+        return "barbershop-search";
+    }
+
+    @PostMapping("/list/{city")
+    public String showBarbershopsByCityPost(Model model, @PathVariable String city){
+        model.addAttribute("barbershop",barbershopRepository.findByCity(city));
+        return "barbershop-list";
+    }
+
+
+
 
 
 

@@ -2,15 +2,11 @@ package pl.barbershop.model;
 
 
 import com.sun.istack.Nullable;
-import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
-
 import javax.persistence.*;
-import javax.validation.constraints.Null;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalDateTime;
-import java.util.Set;
 
 @Entity
 @Table(name = "users")
@@ -43,8 +39,8 @@ public class User {
     @OneToOne
     private Reservation reservation;
 
-    @ColumnDefault("1")
-    private int enabled;
+    @NotNull
+    private boolean enabled = true;
 
 
 
@@ -104,11 +100,11 @@ public class User {
         this.reservation = reservation;
     }
 
-    public int getEnabled() {
+    public boolean isEnabled() {
         return enabled;
     }
 
-    public void setEnabled(int enabled) {
+    public void setEnabled(boolean enabled) {
         this.enabled = enabled;
     }
 }

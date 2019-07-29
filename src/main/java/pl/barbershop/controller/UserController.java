@@ -1,13 +1,11 @@
 package pl.barbershop.controller;
 
 import org.springframework.security.crypto.bcrypt.BCrypt;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import pl.barbershop.model.User;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.UserRepository;
@@ -21,10 +19,12 @@ public class UserController {
 
     private final UserRepository userRepository;
     private final UserRoleRepository userRoleRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository) {
+    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder) {
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @GetMapping("/registration")
@@ -41,29 +41,23 @@ public class UserController {
         UserRole userRole = new UserRole();
         userRole.setUsername(user.getEmail());
         userRole.setRole("ROLE_USER");
-        user.setPassword(BCrypt.hashpw(user.getPassword(),BCrypt.gensalt()));
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         userRepository.save(user);
         userRoleRepository.save(userRole);
-        return "redirect:/homepage";
+        return "redirect:/";
     }
 
-    @GetMapping("/login")
-    public String login(Model model) {
-        model.addAttribute("user", new User());
-        return "login";
+    @GetMapping("/login/panel")
+    public String login() {
+        return "redirect:/";
     }
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute @Valid User user, BindingResult result) {
-        if (result.hasErrors()) {
-            return "login-user";
-        }
-        User userDb = userRepository.findByEmail(user.getEmail());
-        boolean logged = userDb != null && BCrypt.checkpw(user.getPassword(), userDb.getPassword());
-        if (!logged) {
-            return "login-user";
-        }
-        return "redirect:/homepage";
+    @ResponseBody
+    @GetMapping("/login/panel/hello")
+    public String hello (){
+        return "Hello user!!!";
     }
+
+
 
 }

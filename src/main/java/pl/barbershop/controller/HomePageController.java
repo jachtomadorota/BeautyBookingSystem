@@ -16,7 +16,7 @@ public class HomePageController {
         this.userRepository = userRepository;
     }
 
-    @GetMapping("/homepage")
+    @GetMapping("/")
     public String homepage(){
         return "homepage";
     }

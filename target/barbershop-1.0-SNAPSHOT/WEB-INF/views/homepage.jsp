@@ -15,8 +15,8 @@
 
 <h2><a href="http://localhost:8080/barbershop_war_exploded/user/registration">Rejestracja jako użytkownik</a> </h2>
 <h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/registration">Rejestracja jako barber</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/user/login">Logowanie jako użytkownik</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login">Logowanie jako barber</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako użytkownik</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako barber</a> </h2>
 
 </body>
 </html>

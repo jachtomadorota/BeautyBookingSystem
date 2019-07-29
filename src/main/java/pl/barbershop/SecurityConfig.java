@@ -23,9 +23,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+
+
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
+                .passwordEncoder(passwordEncoder())
                 .usersByUsernameQuery("select email, password, enabled from users where email=?")
                 .authoritiesByUsernameQuery("select username, role from user_role where username=?");
 
@@ -34,9 +37,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/user/loged/**").access("hasRole('ROLE_USER')")
-                .antMatchers("/barbershop/loged/**").access("hasRole('ROLE_BARBERSHOP')")
-                .and().formLogin();
+                .antMatchers("/user/login/panel/*").access("hasRole('ROLE_USER')")
+                .and().formLogin()
+                .defaultSuccessUrl("/");
 //        http.logout();
     }
 }
