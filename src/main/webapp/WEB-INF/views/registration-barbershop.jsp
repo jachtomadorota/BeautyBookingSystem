@@ -14,8 +14,7 @@
 <body>
 
 <form:form method="post" modelAttribute="barbershop">
-    <label for="enabledId"></label>
-    <form:input path="enabled" id="enabledId" type="checked"/>
+
     <label for="addressId">Address</label>
     <form:input path="address" id="addressId" type="text"/>
     <form:errors path="address" element="div"></form:errors>

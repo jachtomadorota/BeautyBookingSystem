@@ -47,10 +47,6 @@ public class UserController {
         return "redirect:/";
     }
 
-    @GetMapping("/login/panel")
-    public String login() {
-        return "redirect:/";
-    }
 
     @ResponseBody
     @GetMapping("/login/panel/hello")

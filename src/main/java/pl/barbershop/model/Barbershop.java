@@ -5,6 +5,7 @@ import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.pl.NIP;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -56,6 +57,7 @@ public class Barbershop {
     private Reservation reservation;
     
     @NotBlank
+    @Size(min = 6)
     private String password;
     
     @NIP
@@ -64,6 +66,7 @@ public class Barbershop {
     private String nip;
 
     @NotNull
+    @Value("${barbershop.enabled=true}")
     private boolean enabled = true;
 
     public Long getId() {
@@ -187,4 +190,24 @@ public class Barbershop {
     }
 
 
+    @Override
+    public String toString() {
+        return "Barbershop{" +
+                "id=" + id +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", barbers=" + barbers +
+                ", services=" + services +
+                ", email='" + email + '\'' +
+                ", open='" + open + '\'' +
+                ", close='" + close + '\'' +
+                ", dates=" + dates +
+                ", description='" + description + '\'' +
+                ", reservation=" + reservation +
+                ", password='" + password + '\'' +
+                ", nip='" + nip + '\'' +
+                ", enabled=" + enabled +
+                '}';
+    }
 }

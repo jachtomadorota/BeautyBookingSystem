@@ -4,6 +4,8 @@ package pl.barbershop.model;
 import com.sun.istack.Nullable;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
+import org.springframework.beans.factory.annotation.Value;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,7 +30,7 @@ public class User {
     private String email;
 
     @NotBlank
-    @Size(min = 6)
+    @Size(min = 6,max = 16)
     private String password;
 
     @NotBlank
@@ -40,6 +42,7 @@ public class User {
     private Reservation reservation;
 
     @NotNull
+    @Value("${user.enabled=true}")
     private boolean enabled = true;
 
 

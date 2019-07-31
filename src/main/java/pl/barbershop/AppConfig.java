@@ -43,10 +43,6 @@ public class AppConfig extends WebMvcConfigurerAdapter {
         return new JpaTransactionManager(emf);
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
 
 

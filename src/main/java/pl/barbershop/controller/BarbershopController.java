@@ -1,13 +1,19 @@
 package pl.barbershop.controller;
 
 
+import com.sun.org.apache.xpath.internal.operations.Mod;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.barbershop.model.Barber;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.UserRole;
+import pl.barbershop.repository.BarberRepository;
 import pl.barbershop.repository.BarbershopRepository;
 import pl.barbershop.repository.UserRoleRepository;
 import javax.validation.Valid;
@@ -19,11 +25,13 @@ public class BarbershopController {
 
     private final BarbershopRepository barbershopRepository;
     private final UserRoleRepository userRoleRepository;
+    private final BarberRepository barberRepository;
 
 
-    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository) {
+    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository, BarberRepository barberRepository) {
         this.barbershopRepository = barbershopRepository;
         this.userRoleRepository = userRoleRepository;
+        this.barberRepository = barberRepository;
     }
 
     @GetMapping("/registration")
@@ -39,39 +47,28 @@ public class BarbershopController {
         }
         barbershop.setPassword(BCrypt.hashpw(barbershop.getPassword(),BCrypt.gensalt()));
         UserRole userRole = new UserRole();
-        userRole.setUsername(barbershop.getNip());
+        userRole.setUsername(barbershop.getEmail());
         userRole.setRole("ROLE_BARBERSHOP");
         userRoleRepository.save(userRole);
         barbershopRepository.save(barbershop);
-        return "redirect:/";
-    }
-
-    @PostMapping("/login")
-    public String login(@ModelAttribute @Valid Barbershop barbershop, BindingResult result) {
-        if (result.hasErrors()) {
-            return "login-barbershop";
-        }
-        Barbershop barbershopDb = barbershopRepository.findByNip(barbershop.getNip());
-        boolean logged = barbershopDb != null && BCrypt.checkpw(barbershop.getPassword(), barbershopDb.getPassword());
-        if (!logged) {
-            return "login-barbershop";
-        }
-        return "redirect:/";
-    }
-
-    @GetMapping("/list/{city}")
-    public String showBarbershopsByCity(@PathVariable String city){
-        return "barbershop-search";
-    }
-
-    @PostMapping("/list/{city")
-    public String showBarbershopsByCityPost(Model model, @PathVariable String city){
-        model.addAttribute("barbershop",barbershopRepository.findByCity(city));
-        return "barbershop-list";
+        return "barbershop-panel";
     }
 
 
+    @ResponseBody
+    @GetMapping("/login/panel/barber/details")
+    public String getBarbers(){
 
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        return
+                " " +
+                auth.getName() +
+                " " +
+                auth.getAuthorities().toString() + " " +
+                auth.getPrincipal().toString() + " " +
+                auth.getDetails().toString();
+
+    }
 
 
 
