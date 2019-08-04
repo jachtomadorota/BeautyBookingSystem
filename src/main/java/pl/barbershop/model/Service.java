@@ -16,8 +16,8 @@ public class Service {
     private String name;
     @NotBlank
     private int price;
-    @ManyToMany
-    Set<Barbershop> barbershops;
+    @ManyToOne
+    private Barbershop barbershop;
 
     public Long getId() {
         return id;
@@ -43,11 +43,11 @@ public class Service {
         this.price = price;
     }
 
-    public Set<Barbershop> getBarbershops() {
-        return barbershops;
+    public Barbershop getBarbershop() {
+        return barbershop;
     }
 
-    public void setBarbershops(Set<Barbershop> barbershops) {
-        this.barbershops = barbershops;
+    public void setBarbershop(Barbershop barbershop) {
+        this.barbershop = barbershop;
     }
 }

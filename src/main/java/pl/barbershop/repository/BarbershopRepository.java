@@ -5,11 +5,16 @@ import pl.barbershop.model.Barbershop;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Set;
 
 @Transactional
 public interface BarbershopRepository extends JpaRepository<Barbershop,Long> {
 
     Barbershop findByNip(String nip);
 
-    List<Barbershop> findByCity(String city);
+    Set<Barbershop> findByCity(String city);
+
+    Barbershop findByEmail(String email);
+
+
 }

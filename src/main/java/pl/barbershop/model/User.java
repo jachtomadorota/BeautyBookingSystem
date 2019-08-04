@@ -7,6 +7,8 @@ import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -30,7 +32,7 @@ public class User {
     private String email;
 
     @NotBlank
-    @Size(min = 6,max = 16)
+    @Size(min = 6)
     private String password;
 
     @NotBlank

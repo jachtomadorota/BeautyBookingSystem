@@ -32,7 +32,7 @@ public class Barbershop {
     @OneToMany
     Set<Barber> barbers;
     
-    @ManyToMany(mappedBy = "barbershops")
+    @OneToMany
     Set<Service> services;
 
     @Email

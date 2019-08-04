@@ -42,7 +42,7 @@ public class SecurityConfigBarbershop extends WebSecurityConfigurerAdapter {
         http.antMatcher("/barbershop/login/panel/*").authorizeRequests()
                 .anyRequest().access("hasRole('ROLE_BARBERSHOP')")
                 .and().formLogin()
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("/barbershop/login/")
                 .permitAll()
                 .and()
                 .logout().permitAll();
