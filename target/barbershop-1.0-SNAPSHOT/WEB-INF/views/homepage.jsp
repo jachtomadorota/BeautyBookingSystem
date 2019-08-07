@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dorotajachtoma
@@ -32,16 +33,17 @@
 
 
     </tr>
-    <c:forEach var="barbershop" items="${barbershop}">
+    <c:forEach var="barbershops" items="${barbershops}">
         <tr>
-            <td>${barbershop.address}</td>
-            <td>${barbershop.city}</td>
-            <td>${barbershop.phoneNumber}</td>
-            <td>${barbershop.email}</td>
-            <td>${barbershop.description}</td>
-            <td>${barbershop.nip}</td>
-            <td>${barbershop.open}</td>
-            <td>${barbershop.close}</td>
+            <td>${barbershops.address}</td>
+            <td>${barbershops.city}</td>
+            <td>${barbershops.phoneNumber}</td>
+            <td>${barbershops.email}</td>
+            <td>${barbershops.description}</td>
+            <td>${barbershops.nip}</td>
+            <td>${barbershops.open}</td>
+            <td>${barbershops.close}</td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Zarezerwuj wizytę</a> </td>
         </tr>
     </c:forEach>
 </table>
