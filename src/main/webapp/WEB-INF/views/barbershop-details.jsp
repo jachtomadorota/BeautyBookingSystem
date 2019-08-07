@@ -1,4 +1,3 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: dorotajachtoma
@@ -7,12 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <title>Barbershop Details</title>
 </head>
 <body>
-
 <table border="1">
     <tr>
         <th>Address</th>
@@ -26,20 +26,19 @@
 
 
     </tr>
-    <c:forEach var="barbershop" items="${barbershop}">
+    <c:forEach var="barbershops" items="${barbershops}">
         <tr>
-            <td>${barbershop.address}</td>
-            <td>${barbershop.city}</td>
-            <td>${barbershop.phoneNumber}</td>
-            <td>${barbershop.email}</td>
-            <td>${barbershop.description}</td>
-            <td>${barbershop.nip}</td>
-            <td>${barbershop.open}</td>
-            <td>${barbershop.close}</td>
+            <td>${barbershops.address}</td>
+            <td>${barbershops.city}</td>
+            <td>${barbershops.phoneNumber}</td>
+            <td>${barbershops.email}</td>
+            <td>${barbershops.description}</td>
+            <td>${barbershops.nip}</td>
+            <td>${barbershops.open}</td>
+            <td>${barbershops.close}</td>
         </tr>
     </c:forEach>
 </table>
-
 
 
 </body>

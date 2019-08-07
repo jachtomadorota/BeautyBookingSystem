@@ -29,7 +29,6 @@
     </c:forEach>
 
 </table>
-<h3><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/barber/add">Dodaj</a> </h3>
 
 
 </body>

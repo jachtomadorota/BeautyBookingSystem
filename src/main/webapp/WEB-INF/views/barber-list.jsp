@@ -22,7 +22,7 @@
         <tr>
             <td>${barber.name}</td>
             <td><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/barber/update/${barber.id}">Edytuj</a> </td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/barber/delete/1/${barber.id}">Usuń</a> </td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/barber/delete/${barber.id}">Usuń</a> </td>
         </tr>
     </c:forEach>
 

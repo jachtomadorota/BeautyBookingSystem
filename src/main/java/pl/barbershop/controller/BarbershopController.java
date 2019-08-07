@@ -2,6 +2,8 @@ package pl.barbershop.controller;
 
 
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.bcrypt.BCrypt;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +12,9 @@ import org.springframework.web.bind.annotation.*;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.*;
-import pl.barbershop.service.BarbershopServiceImpl;
-
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -22,16 +24,14 @@ public class BarbershopController {
     private final BarbershopRepository barbershopRepository;
     private final UserRoleRepository userRoleRepository;
     private final BarberRepository barberRepository;
-    private final BarbershopServiceImpl barbershopService;
     private final ServiceRepository serviceRepository;
     private final ReservationRepository reservationRepository;
 
 
-    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository, BarberRepository barberRepository, BarbershopServiceImpl barbershopService, ServiceRepository serviceRepository, ReservationRepository reservationRepository) {
+    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository, BarberRepository barberRepository, ServiceRepository serviceRepository, ReservationRepository reservationRepository) {
         this.barbershopRepository = barbershopRepository;
         this.userRoleRepository = userRoleRepository;
         this.barberRepository = barberRepository;
-        this.barbershopService = barbershopService;
         this.serviceRepository = serviceRepository;
         this.reservationRepository = reservationRepository;
     }
@@ -58,46 +58,66 @@ public class BarbershopController {
 
     @GetMapping("/login/panel/details")
     public String getBarbershopDetails(Model model){
-    Barbershop barbershop = barbershopService.checkIsLoged();
-        if( barbershop != null){
-            model.addAttribute("barbershop",barbershop);
-            return "barbershop-details";
-        }else{
-            return "redirect:/login";
-        }
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+                String username = ((UserDetails) principal).getUsername();
+                List<Barbershop> barbershopList = new ArrayList<>();
+                barbershopList.add(barbershopRepository.findByEmail(username));
+                model.addAttribute("barbershops", barbershopList);
+                return "barbershop-details";
+            } else {
+                return "redirect:/login";
+            }
+
+
     }
 
     @GetMapping("/login/panel/barbers")
     public String getBarbers(Model model){
-        Barbershop barbershop = barbershopService.checkIsLoged();
-        if(barbershop != null){
-            model.addAttribute("barber",barberRepository.findByBarbershopId(barbershop.getId()));
-            return "barber-list";
-        }else{
-            return "redirect:/login";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            if (barbershop != null) {
+                model.addAttribute("barber", barberRepository.findByBarbershopId(barbershop.getId()));
+                return "barber-list";
+            } else {
+                return "redirect:/login";
+            }
         }
+        return null;
     }
 
     @GetMapping("/login/panel/services")
     public String getServices (Model model){
-        Barbershop barbershop = barbershopService.checkIsLoged();
-        if(barbershop != null){
-            model.addAttribute("service",serviceRepository.findServicesByBarbershopsId(barbershop.getId()));
-            return  "service-list";
-        }else{
-            return "redirect:/login";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            if (barbershop != null) {
+                model.addAttribute("service", serviceRepository.findServicesByBarbershopsId(barbershop.getId()));
+                return "service-list";
+            } else {
+                return "redirect:/login";
+            }
         }
+        return null;
     }
 
     @GetMapping("/login/panel/reservations")
     public String getReservations(Model model){
-        Barbershop barbershop = barbershopService.checkIsLoged();
-        if(barbershop != null){
-            model.addAttribute("reservations", reservationRepository.findbyBarbershopId(barbershop.getId()));
-            return  "reservation-list";
-        }else{
-            return "redirect:/login";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            if (barbershop != null) {
+                model.addAttribute("reservations", reservationRepository.findbyBarbershopId(barbershop.getId()));
+                return "reservation-list";
+            } else {
+                return "redirect:/login";
+            }
         }
+        return null;
     }
 
 

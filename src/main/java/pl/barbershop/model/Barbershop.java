@@ -29,10 +29,10 @@ public class Barbershop {
     @Size(min = 9,max = 9)
     private String phoneNumber;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     Set<Barber> barbers;
     
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     Set<Service> services;
 
     @Email
@@ -46,7 +46,7 @@ public class Barbershop {
     @NotBlank
     private String close;
     
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     Set<Date> dates;
     
     @NotBlank

@@ -16,6 +16,7 @@
 <table border="1">
     <tr>
         <th>Name</th>
+        <th>Price</th>
 
     </tr>
     <c:forEach var="service" items="${service}">

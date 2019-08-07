@@ -1,6 +1,8 @@
 package pl.barbershop.controller;
 
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,8 +12,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.Service;
+import pl.barbershop.repository.BarbershopRepository;
+import pl.barbershop.repository.ReservationRepository;
 import pl.barbershop.repository.ServiceRepository;
-import pl.barbershop.service.BarbershopServiceImpl;
+
 import javax.validation.Valid;
 
 @Controller
@@ -19,20 +23,28 @@ import javax.validation.Valid;
 public class ServiceController {
 
     private final ServiceRepository serviceRepository;
-    private final BarbershopServiceImpl barbershopService;
+    private final ReservationRepository reservationRepository;
+    private final BarbershopRepository barbershopRepository;
 
-    public ServiceController(ServiceRepository serviceRepository, BarbershopServiceImpl barbershopService) {
+    public ServiceController(ServiceRepository serviceRepository, ReservationRepository reservationRepository, BarbershopRepository barbershopRepository) {
         this.serviceRepository = serviceRepository;
-        this.barbershopService = barbershopService;
+        this.reservationRepository = reservationRepository;
+        this.barbershopRepository = barbershopRepository;
     }
+
 
     @GetMapping("/add")
     public String addServiceGet(Model model){
         Service service = new Service();
-        Barbershop barbershop = barbershopService.checkIsLoged();
-        service.setBarbershop(barbershop);
-        model.addAttribute("service",service);
-        return "add-service";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            service.setBarbershop(barbershop);
+            model.addAttribute("service", service);
+            return "add-service";
+        }
+        return null;
     }
 
     @PostMapping("/add")

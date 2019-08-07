@@ -19,7 +19,7 @@ public class HomePageController {
 
     @GetMapping("/")
     public String homepage(Model model){
-        model.addAttribute("barbershop",barbershopRepository.findAll());
+        model.addAttribute("barbershops",barbershopRepository.findAll());
         return "homepage";
     }
 

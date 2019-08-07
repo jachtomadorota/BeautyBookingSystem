@@ -18,6 +18,8 @@ public class Service {
     private int price;
     @ManyToOne
     private Barbershop barbershop;
+    @ManyToOne
+    private Reservation reservation;
 
     public Long getId() {
         return id;
@@ -49,5 +51,13 @@ public class Service {
 
     public void setBarbershop(Barbershop barbershop) {
         this.barbershop = barbershop;
+    }
+
+    public Reservation getReservation() {
+        return reservation;
+    }
+
+    public void setReservation(Reservation reservation) {
+        this.reservation = reservation;
     }
 }

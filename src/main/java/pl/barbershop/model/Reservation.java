@@ -2,6 +2,7 @@ package pl.barbershop.model;
 
 
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "reservations")
@@ -18,6 +19,8 @@ public class Reservation {
     private Barber barber;
     @OneToOne
     private Date date;
+    @OneToMany
+    private Set<Service> services;
 
     public Long getId() {
         return id;
@@ -49,5 +52,21 @@ public class Reservation {
 
     public void setBarber(Barber barber) {
         this.barber = barber;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Set<Service> getServices() {
+        return services;
+    }
+
+    public void setServices(Set<Service> services) {
+        this.services = services;
     }
 }

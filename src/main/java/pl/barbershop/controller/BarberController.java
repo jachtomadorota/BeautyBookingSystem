@@ -1,6 +1,8 @@
 package pl.barbershop.controller;
 
 
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,8 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.barbershop.model.Barber;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.repository.BarberRepository;
+import pl.barbershop.repository.BarbershopRepository;
 import pl.barbershop.repository.ReservationRepository;
-import pl.barbershop.service.BarbershopServiceImpl;
 
 import javax.validation.Valid;
 
@@ -21,26 +23,36 @@ import javax.validation.Valid;
 public class BarberController {
 
     private final BarberRepository barberRepository;
-    private final BarbershopServiceImpl barbershopService;
     private final ReservationRepository reservationRepository;
+    private final BarbershopRepository barbershopRepository;
 
-    public BarberController(BarberRepository barberRepository, BarbershopServiceImpl barbershopService, ReservationRepository reservationRepository) {
+    public BarberController(BarberRepository barberRepository, ReservationRepository reservationRepository, BarbershopRepository barbershopRepository) {
         this.barberRepository = barberRepository;
-        this.barbershopService = barbershopService;
         this.reservationRepository = reservationRepository;
+        this.barbershopRepository = barbershopRepository;
     }
-
 
     @GetMapping("/add")
     public String addBarberGet(Model model){
-        model.addAttribute("barber",new Barber());
-        return "add-barber";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+
+            model.addAttribute("barber",new Barber());
+            return "add-barber";
+
+
+
     }
 
     @PostMapping("/add")
     public String addBarberPost(@Valid Barber barber, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "add-barber";
+        }
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            barber.setBarbershop(barbershop);
         }
         barberRepository.save(barber);
         return "barbershop-panel";
@@ -63,20 +75,30 @@ public class BarberController {
         if(bindingResult.hasErrors()){
             return "add-barber";
         }
-        barberRepository.save(barber);
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            barber.setBarbershop(barbershop);
+            barberRepository.save(barber);
+        }
         return "barbershop-panel";
     }
 
     @GetMapping("/{id}/reservations")
     public String getReservations(@PathVariable Long id, Model model) {
-        Barbershop barbershop = barbershopService.checkIsLoged();
-        if (barbershop != null) {
-            model.addAttribute("reservations", reservationRepository.findbyBarberId(id));
-            return "reservation-list";
-        } else {
-            return "redirect:/login";
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            if (barbershop != null) {
+                model.addAttribute("reservations", reservationRepository.findbyBarberId(id));
+                return "reservation-list";
+            } else {
+                return "redirect:/login";
+            }
         }
-
+        return null;
     }
 
 }
