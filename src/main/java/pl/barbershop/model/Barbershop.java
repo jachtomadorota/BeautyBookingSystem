@@ -1,25 +1,28 @@
 package pl.barbershop.model;
 
-import net.bytebuddy.asm.Advice;
-import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.pl.NIP;
 import org.springframework.beans.factory.annotation.Value;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.time.LocalTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
+@Proxy(lazy=false)
 @Table(name = "barbershops")
 public class Barbershop {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @NotBlank
+    private String name;
+
     @NotBlank
     private String address;
     
@@ -28,9 +31,6 @@ public class Barbershop {
     
     @Size(min = 9,max = 9)
     private String phoneNumber;
-    
-    @OneToMany(fetch = FetchType.EAGER)
-    Set<Barber> barbers;
     
     @OneToMany(fetch = FetchType.EAGER)
     Set<Service> services;
@@ -46,20 +46,21 @@ public class Barbershop {
     @NotBlank
     private String close;
     
-    @ManyToMany(fetch = FetchType.EAGER)
-    Set<Date> dates;
+    @OneToMany
+    private Set<Date> dates;
     
     @NotBlank
     @Size(min = 100,max = 450)
     private String description;
-    
-    @OneToOne
-    private Reservation reservation;
-    
+
+    @OneToMany
+    private List<Reservation> reservation;
+
     @NotBlank
     @Size(min = 6)
     private String password;
-    
+
+
     @NIP
     @NotBlank
     @Column(unique = true)
@@ -68,6 +69,7 @@ public class Barbershop {
     @NotNull
     @Value("${barbershop.enabled=true}")
     private boolean enabled = true;
+
 
     public Long getId() {
         return id;
@@ -101,12 +103,13 @@ public class Barbershop {
         this.phoneNumber = phoneNumber;
     }
 
-    public Set<Barber> getBarbers() {
-        return barbers;
+
+    public String getName() {
+        return name;
     }
 
-    public void setBarbers(Set<Barber> barbers) {
-        this.barbers = barbers;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Set<Service> getServices() {
@@ -149,11 +152,11 @@ public class Barbershop {
         this.description = description;
     }
 
-    public Reservation getReservation() {
+    public List<Reservation> getReservation() {
         return reservation;
     }
 
-    public void setReservation(Reservation reservation) {
+    public void setReservation(List<Reservation> reservation) {
         this.reservation = reservation;
     }
 
@@ -189,25 +192,4 @@ public class Barbershop {
         this.enabled = enabled;
     }
 
-
-    @Override
-    public String toString() {
-        return "Barbershop{" +
-                "id=" + id +
-                ", address='" + address + '\'' +
-                ", city='" + city + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", barbers=" + barbers +
-                ", services=" + services +
-                ", email='" + email + '\'' +
-                ", open='" + open + '\'' +
-                ", close='" + close + '\'' +
-                ", dates=" + dates +
-                ", description='" + description + '\'' +
-                ", reservation=" + reservation +
-                ", password='" + password + '\'' +
-                ", nip='" + nip + '\'' +
-                ", enabled=" + enabled +
-                '}';
-    }
 }

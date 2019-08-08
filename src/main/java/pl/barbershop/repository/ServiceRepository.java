@@ -11,6 +11,6 @@ import java.util.List;
 @Transactional
 public interface ServiceRepository extends JpaRepository<Service,Long> {
 
-    @Query(value = "select * from services left join services_barbershops on services.id = services_barbershops.services_id where services.id = ?1;",nativeQuery = true)
+    @Query(value = "select * from services where barbershop_id=?1",nativeQuery = true)
     List<Service> findServicesByBarbershopsId(Long id);
 }

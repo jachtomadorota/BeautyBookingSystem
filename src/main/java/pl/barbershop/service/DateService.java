@@ -1,12 +1,13 @@
 package pl.barbershop.service;
 
 import pl.barbershop.model.Barbershop;
+import pl.barbershop.model.Date;
+import pl.barbershop.model.Service;
+import pl.barbershop.model.Slot;
 
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.util.List;
 
 public interface DateService {
 
-    void setCalendar(LocalDateTime now);
-
+    List<Slot> setSlotsInDate(Date date, Service service, Barbershop barbershop);
 }

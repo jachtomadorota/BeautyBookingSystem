@@ -12,9 +12,10 @@
 </head>
 <body>
 
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/barbers">Zarządzaj barberami w zespole</a></h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/reservations">Zarządzaj rezerwacjami</a></h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/services"></a>Zarządzaj dostępnymi usługami</h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/details">Zarządzaj kontem</a></h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/reservations">Manage reservations</a></h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/services">Manage your services</a></h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/details">Manage account</a></h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/login?logout">Logout</a> </h2>
+
 </body>
 </html>

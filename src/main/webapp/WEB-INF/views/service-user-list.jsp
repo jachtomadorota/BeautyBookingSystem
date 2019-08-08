@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: dorotajachtoma
-  Date: 04.08.19
-  Time: 09:50
+  Date: 07.08.19
+  Time: 16:59
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -23,15 +23,11 @@
         <tr>
             <td>${service.name}</td>
             <td>${service.price}</td>
-            <td>${service.time}</td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/service/update/${service.id}">Edytuj</a> </td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/service/delete/${service.id}">Usuń</a> </td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershopId}/${service.id}">Choose</a> </td>
         </tr>
     </c:forEach>
 
 </table>
-<h3><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/service/add">Dodaj</a> </h3>
-
 
 </body>
 </html>

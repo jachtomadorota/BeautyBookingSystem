@@ -4,6 +4,8 @@ package pl.barbershop.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import pl.barbershop.repository.BarbershopRepository;
 
 
@@ -23,5 +25,15 @@ public class HomePageController {
         return "homepage";
     }
 
+    @GetMapping("/search")
+    public String search(){
+        return "search";
+    }
+
+    @PostMapping("/search")
+    public String searchPost(Model model, @RequestParam("city") String city){
+        model.addAttribute("barbershop",barbershopRepository.findByCity(city));
+        return "barbershop-list";
+    }
 
 }

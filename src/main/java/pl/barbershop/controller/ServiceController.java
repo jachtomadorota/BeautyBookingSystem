@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.Service;
 import pl.barbershop.repository.BarbershopRepository;
-import pl.barbershop.repository.ReservationRepository;
 import pl.barbershop.repository.ServiceRepository;
 
 import javax.validation.Valid;
@@ -23,28 +22,19 @@ import javax.validation.Valid;
 public class ServiceController {
 
     private final ServiceRepository serviceRepository;
-    private final ReservationRepository reservationRepository;
     private final BarbershopRepository barbershopRepository;
 
-    public ServiceController(ServiceRepository serviceRepository, ReservationRepository reservationRepository, BarbershopRepository barbershopRepository) {
+    public ServiceController(ServiceRepository serviceRepository,BarbershopRepository barbershopRepository) {
         this.serviceRepository = serviceRepository;
-        this.reservationRepository = reservationRepository;
         this.barbershopRepository = barbershopRepository;
     }
 
 
     @GetMapping("/add")
     public String addServiceGet(Model model){
-        Service service = new Service();
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails) {
-            String username = ((UserDetails) principal).getUsername();
-            Barbershop barbershop = barbershopRepository.findByEmail(username);
-            service.setBarbershop(barbershop);
-            model.addAttribute("service", service);
-            return "add-service";
-        }
-        return null;
+        model.addAttribute("service", new Service());
+        return "add-service";
+
     }
 
     @PostMapping("/add")
@@ -52,7 +42,13 @@ public class ServiceController {
         if(bindingResult.hasErrors()){
             return "add-service";
         }
-        serviceRepository.save(service);
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            service.setBarbershop(barbershop);
+            serviceRepository.save(service);
+        }
         return "barbershop-panel";
     }
 
@@ -73,7 +69,13 @@ public class ServiceController {
         if(bindingResult.hasErrors()){
             return "add-service";
         }
-        serviceRepository.save(service);
+        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (principal instanceof UserDetails) {
+            String username = ((UserDetails) principal).getUsername();
+            Barbershop barbershop = barbershopRepository.findByEmail(username);
+            service.setBarbershop(barbershop);
+            serviceRepository.save(service);
+        }
         return "barbershop-panel";
     }
 

@@ -23,15 +23,13 @@ public class BarbershopController {
 
     private final BarbershopRepository barbershopRepository;
     private final UserRoleRepository userRoleRepository;
-    private final BarberRepository barberRepository;
     private final ServiceRepository serviceRepository;
     private final ReservationRepository reservationRepository;
 
 
-    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository, BarberRepository barberRepository, ServiceRepository serviceRepository, ReservationRepository reservationRepository) {
+    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository,ServiceRepository serviceRepository, ReservationRepository reservationRepository) {
         this.barbershopRepository = barbershopRepository;
         this.userRoleRepository = userRoleRepository;
-        this.barberRepository = barberRepository;
         this.serviceRepository = serviceRepository;
         this.reservationRepository = reservationRepository;
     }
@@ -43,7 +41,7 @@ public class BarbershopController {
     }
 
     @PostMapping("/registration")
-    public String registrationBarbershopPost(@Valid Barbershop barbershop, BindingResult bindingResult){
+    public String registrationBarbershopPost(Model model, @Valid Barbershop barbershop, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "registration-barbershop";
         }
@@ -53,6 +51,13 @@ public class BarbershopController {
         userRole.setRole("ROLE_BARBERSHOP");
         userRoleRepository.save(userRole);
         barbershopRepository.save(barbershop);
+        return "redirect:/";
+    }
+
+
+
+    @GetMapping("/login/panel")
+    public String getPanel(){
         return "barbershop-panel";
     }
 
@@ -68,24 +73,6 @@ public class BarbershopController {
             } else {
                 return "redirect:/login";
             }
-
-
-    }
-
-    @GetMapping("/login/panel/barbers")
-    public String getBarbers(Model model){
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails) {
-            String username = ((UserDetails) principal).getUsername();
-            Barbershop barbershop = barbershopRepository.findByEmail(username);
-            if (barbershop != null) {
-                model.addAttribute("barber", barberRepository.findByBarbershopId(barbershop.getId()));
-                return "barber-list";
-            } else {
-                return "redirect:/login";
-            }
-        }
-        return null;
     }
 
     @GetMapping("/login/panel/services")

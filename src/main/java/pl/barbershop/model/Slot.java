@@ -1,19 +1,18 @@
 package pl.barbershop.model;
 
 import javax.persistence.*;
-import java.time.LocalTime;
-import java.util.Set;
 
 @Entity
-public class Hour {
+@Table(name = "slots")
+public class Slot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalTime localTime;
-    private boolean avaible;
     @ManyToOne
     private Date date;
+    private boolean avaible;
+    private String time;
 
     public Long getId() {
         return id;
@@ -21,14 +20,6 @@ public class Hour {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public LocalTime getLocalTime() {
-        return localTime;
-    }
-
-    public void setLocalTime(LocalTime localTime) {
-        this.localTime = localTime;
     }
 
     public Date getDate() {
@@ -45,5 +36,13 @@ public class Hour {
 
     public void setAvaible(boolean avaible) {
         this.avaible = avaible;
+    }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
     }
 }

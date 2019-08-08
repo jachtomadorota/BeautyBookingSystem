@@ -1,26 +1,29 @@
 package pl.barbershop.model;
 
-import net.bytebuddy.asm.Advice;
+import org.hibernate.annotations.Proxy;
+import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name="dates")
+@Proxy(lazy=false)
 public class Date {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private LocalDate date;
+    private String date;
+    @Value("${date.avaible=false}")
     private boolean avaible;
-    @ManyToMany
-    Set<Barbershop> barbershops;
+    @ManyToOne
+    private Barbershop barbershop;
     @OneToMany
-    private Set<Hour> hours;
+    private List<Slot> slots;
+
 
 
 
@@ -33,21 +36,22 @@ public class Date {
         this.id = id;
     }
 
-    public LocalDate getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDate date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Set<Barbershop> getBarbershops() {
-        return barbershops;
+    public Barbershop getBarbershop() {
+        return barbershop;
     }
 
-    public void setBarbershops(Set<Barbershop> barbershops) {
-        this.barbershops = barbershops;
+    public void setBarbershop(Barbershop barbershop) {
+        this.barbershop = barbershop;
     }
+
 
     public boolean isAvaible() {
         return avaible;
@@ -57,11 +61,11 @@ public class Date {
         this.avaible = avaible;
     }
 
-    public Set<Hour> getHours() {
-        return hours;
+    public List<Slot> getSlots() {
+        return slots;
     }
 
-    public void setHours(Set<Hour> hours) {
-        this.hours = hours;
+    public void setSlots(List<Slot> slots) {
+        this.slots = slots;
     }
 }

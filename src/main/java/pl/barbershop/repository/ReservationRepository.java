@@ -13,7 +13,7 @@ public interface ReservationRepository extends JpaRepository<Reservation,Long>{
     @Query(value = "select * from reservations where user_id=?1",nativeQuery = true)
     Set<Reservation> findByUserId(Long id);
 
-    @Query(value = "/select * from reservations where barbershop_id=?1",nativeQuery = true)
+    @Query(value = "select * from reservations where barbershop_id=?1",nativeQuery = true)
     Set<Reservation> findbyBarbershopId(Long id);
 
     @Query(value = "select * from reservations where barber_id=?1",nativeQuery = true)

@@ -2,16 +2,19 @@ package pl.barbershop.model;
 
 
 import com.sun.istack.Nullable;
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.Email;
 import org.hibernate.validator.constraints.NotBlank;
 import org.springframework.beans.factory.annotation.Value;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+@Proxy(lazy=false)
 @Entity
 @Table(name = "users")
 public class User {

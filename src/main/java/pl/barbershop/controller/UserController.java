@@ -7,7 +7,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.User;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.ReservationRepository;
@@ -15,6 +14,8 @@ import pl.barbershop.repository.UserRepository;
 import pl.barbershop.repository.UserRoleRepository;
 
 import javax.validation.Valid;
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 @RequestMapping("/user")
@@ -53,19 +54,46 @@ public class UserController {
     }
 
 
+    @GetMapping("/login/panel")
+    public String showPanel(){
+        return "user-panel";
+    }
+
     @GetMapping("/login/panel/details")
     public String showDetails(Model model){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             String username = ((UserDetails) principal).getUsername();
-            User user = userRepository.findByEmail(username);
-            model.addAttribute("user", userRepository.findByEmail(user.getEmail()));
+            List<User> users = new ArrayList<>();
+            users.add(userRepository.findByEmail(username));
+            model.addAttribute("user",users);
             return "user-details";
         }
-        return null;
+        return "redirect:/login";
     }
 
-    @GetMapping("/login/panel/details/reservation")
+    @GetMapping("/login/panel/details/delete/{id}")
+    public String deleteUser(@PathVariable Long id){
+        userRepository.deleteById(id);
+        return "redirect:/";
+    }
+
+    @GetMapping("/login/panel/details/update/{id}")
+    public String updateUserGet(Model model,@PathVariable Long id){
+        model.addAttribute("user",userRepository.getOne(id));
+        return "registration-user";
+    }
+
+    @PostMapping("/login/panel/details/update/{id}")
+    public String updateUserPost(@PathVariable Long id,@Valid User user,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "registration-user";
+        }
+        userRepository.save(user);
+        return "redirect:user/login/panel/details";
+    }
+
+    @GetMapping("/login/panel/reservation")
     public String showReservations(Model model) {
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
@@ -74,7 +102,7 @@ public class UserController {
             model.addAttribute("reservation", reservationRepository.findByUserId(user.getId()));
             return "reservation-list";
         }
-        return null;
+        return "redirect:/login";
     }
 
 

@@ -27,6 +27,10 @@
     <form:input path="price" id="priceId" type="text"/>
     <form:errors path="name" element="div"></form:errors>
     <br><br>
+    <label for="timerId">Time</label>
+    <form:input path="time" id="timerId" type="text"/>
+    <form:errors path="time" element="div"></form:errors>
+    <br><br>
 
     <input type="submit" value="Submit">
 </form:form>

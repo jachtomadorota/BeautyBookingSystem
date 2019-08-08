@@ -14,11 +14,13 @@
 </head>
 <body>
 
-<h2><a href="http://localhost:8080/barbershop_war_exploded/user/registration">Rejestracja jako użytkownik</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/registration">Rejestracja jako barber</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako użytkownik</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako barber</a> </h2>
-
+<h2><a href="http://localhost:8080/barbershop_war_exploded/user/registration">Register as a user</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/registration">Register as a barbershop</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Log as a user</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Log as a barber</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel">User Panel</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel">Barbershop Panel</a> </h2>
+<h2><a href="http://localhost:8080/barbershop_war_exploded/search">Search</a> </h2>
 
 <table border="1">
     <tr>

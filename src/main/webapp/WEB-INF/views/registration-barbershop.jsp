@@ -23,6 +23,10 @@
     <form:input path="city" id="cityId" type="text"/>
     <form:errors path="city" element="div"></form:errors>
     <br><br>
+    <label for="nameId">Name</label>
+    <form:input path="name" id="nameId" type="text"/>
+    <form:errors path="name" element="div"></form:errors>
+    <br><br>
     <br><br>
     <label for="phoneNumberId">Phone Number</label>
     <form:input path="phoneNumber" id="phoneNumberId" type="text"/>
@@ -30,12 +34,12 @@
     <br>
     <br><br>
     <label for="openId">Open</label>
-    <form:input path="open" id="openId" type="time" value="08:00:00"/>
+    <form:input path="open" id="openId" type="text"/>
     <form:errors path="open" element="div"></form:errors>
     <br>
     <br><br>
     <label for="closeId">Close</label>
-    <form:input path="close" id="closeId" type="time" value="08:00:00"/>
+    <form:input path="close" id="closeId" type="text"/>
     <form:errors path="close" element="div"></form:errors>
     <br>
     <br><br>

@@ -1,9 +1,12 @@
 package pl.barbershop.model;
 
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 import java.util.Set;
 
+@Proxy(lazy=false)
 @Entity
 @Table(name = "reservations")
 public class Reservation {
@@ -16,11 +19,11 @@ public class Reservation {
     @OneToOne
     private Barbershop barbershop;
     @OneToOne
-    private Barber barber;
-    @OneToOne
     private Date date;
-    @OneToMany
-    private Set<Service> services;
+    @OneToOne
+    private Service service;
+    @OneToOne
+    private Slot slot;
 
     public Long getId() {
         return id;
@@ -46,13 +49,6 @@ public class Reservation {
         this.barbershop = barbershop;
     }
 
-    public Barber getBarber() {
-        return barber;
-    }
-
-    public void setBarber(Barber barber) {
-        this.barber = barber;
-    }
 
     public Date getDate() {
         return date;
@@ -62,11 +58,19 @@ public class Reservation {
         this.date = date;
     }
 
-    public Set<Service> getServices() {
-        return services;
+    public Service getService() {
+        return service;
     }
 
-    public void setServices(Set<Service> services) {
-        this.services = services;
+    public void setService(Service service) {
+        this.service = service;
+    }
+
+    public Slot getSlot() {
+        return slot;
+    }
+
+    public void setSlot(Slot slot) {
+        this.slot = slot;
     }
 }

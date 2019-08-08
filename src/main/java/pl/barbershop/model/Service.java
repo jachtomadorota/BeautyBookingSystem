@@ -1,11 +1,13 @@
 package pl.barbershop.model;
 
+import org.hibernate.annotations.Proxy;
 import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
+@Proxy(lazy=false)
 @Table(name = "services")
 public class Service {
 
@@ -15,11 +17,12 @@ public class Service {
     @NotBlank
     private String name;
     @NotBlank
-    private int price;
+    private String price;
+    @NotBlank
+    private String time;
     @ManyToOne
     private Barbershop barbershop;
-    @ManyToOne
-    private Reservation reservation;
+
 
     public Long getId() {
         return id;
@@ -37,11 +40,11 @@ public class Service {
         this.name = name;
     }
 
-    public int getPrice() {
+    public String getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
+    public void setPrice(String price) {
         this.price = price;
     }
 
@@ -53,11 +56,11 @@ public class Service {
         this.barbershop = barbershop;
     }
 
-    public Reservation getReservation() {
-        return reservation;
+    public String getTime() {
+        return time;
     }
 
-    public void setReservation(Reservation reservation) {
-        this.reservation = reservation;
+    public void setTime(String time) {
+        this.time = time;
     }
 }

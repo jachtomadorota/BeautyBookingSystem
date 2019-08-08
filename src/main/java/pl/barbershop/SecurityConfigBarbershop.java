@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @EnableWebSecurity
 @Configuration
 @ComponentScan(value = "pl.barbershop")
-@Order(1)
+@Order(2)
 public class SecurityConfigBarbershop extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -39,13 +39,13 @@ public class SecurityConfigBarbershop extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.antMatcher("/barbershop/login/panel/*").authorizeRequests()
+        http.antMatcher("/barbershop/login/*").authorizeRequests()
                 .anyRequest().access("hasRole('ROLE_BARBERSHOP')")
                 .and().formLogin()
-                .defaultSuccessUrl("/barbershop/login/")
-                .permitAll()
-                .and()
-                .logout().permitAll();
-                http.logout();
+                .defaultSuccessUrl("/")
+                .and().logout()
+                .logoutSuccessUrl("/");
+        http.csrf().disable();
+        http.logout();
     }
 }
