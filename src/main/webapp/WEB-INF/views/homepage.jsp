@@ -11,25 +11,31 @@
 <html>
 <head>
     <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <style>
+       table {
+           height: 10em;
+           display: flex;
+           align-items: center;
+           justify-content: center
+       }
+    </style>
 </head>
 <body>
+<%@include file="header.jsp"%>
 
-<h2><a href="http://localhost:8080/barbershop_war_exploded/user/registration">Register as a user</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/registration">Register as a barbershop</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Log as a user</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Log as a barber</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel">User Panel</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel">Barbershop Panel</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/search">Search</a> </h2>
-
-<table border="1">
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<table class="table table-borderless table-dark">
     <tr>
         <th>Address</th>
         <th>City</th>
         <th>Phone Number</th>
         <th>Email</th>
-        <th>Description</th>
-        <th>NIP</th>
         <th>Open</th>
         <th>Close</th>
 
@@ -41,15 +47,12 @@
             <td>${barbershops.city}</td>
             <td>${barbershops.phoneNumber}</td>
             <td>${barbershops.email}</td>
-            <td>${barbershops.description}</td>
-            <td>${barbershops.nip}</td>
             <td>${barbershops.open}</td>
             <td>${barbershops.close}</td>
             <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Zarezerwuj wizytę</a> </td>
         </tr>
     </c:forEach>
 </table>
-
 
 </body>
 </html>

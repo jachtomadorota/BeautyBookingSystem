@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>jQuery UI Datepicker - Default functionality</title>
+    <title>Choose date</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
@@ -22,9 +22,12 @@
     </script>
 </head>
 <body>
+<%@include file="header.jsp"%>
+
 <form method="post">
     <input type="text" id="datepicker" name="date"/>
     <input type="submit" value="confirm"/>
 </form>
+
 </body>
 </html>

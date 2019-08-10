@@ -9,5 +9,5 @@ import java.util.List;
 
 public interface DateService {
 
-    List<Slot> setSlotsInDate(Date date, Service service, Barbershop barbershop);
+    List<Date> setDays();
 }

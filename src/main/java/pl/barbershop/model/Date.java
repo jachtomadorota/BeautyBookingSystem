@@ -16,16 +16,9 @@ public class Date {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String date;
-    @Value("${date.avaible=false}")
-    private boolean avaible;
-    @ManyToOne
-    private Barbershop barbershop;
-    @OneToMany
+    private String day;
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Slot> slots;
-
-
-
 
 
     public Long getId() {
@@ -36,29 +29,12 @@ public class Date {
         this.id = id;
     }
 
-    public String getDate() {
-        return date;
+    public String getDay() {
+        return day;
     }
 
-    public void setDate(String date) {
-        this.date = date;
-    }
-
-    public Barbershop getBarbershop() {
-        return barbershop;
-    }
-
-    public void setBarbershop(Barbershop barbershop) {
-        this.barbershop = barbershop;
-    }
-
-
-    public boolean isAvaible() {
-        return avaible;
-    }
-
-    public void setAvaible(boolean avaible) {
-        this.avaible = avaible;
+    public void setDay(String day) {
+        this.day = day;
     }
 
     public List<Slot> getSlots() {
@@ -67,5 +43,12 @@ public class Date {
 
     public void setSlots(List<Slot> slots) {
         this.slots = slots;
+    }
+
+    @Override
+    public String toString() {
+        return "Date{" +
+                "id=" + id +
+                ", day='" + day;
     }
 }

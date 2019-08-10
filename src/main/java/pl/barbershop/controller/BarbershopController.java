@@ -10,11 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import pl.barbershop.model.Barbershop;
+import pl.barbershop.model.Date;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.*;
+import pl.barbershop.service.DateService;
+
 import javax.validation.Valid;
-import java.util.ArrayList;
-import java.util.List;
+import java.lang.reflect.Array;
+import java.util.*;
 
 
 @Controller
@@ -25,13 +28,17 @@ public class BarbershopController {
     private final UserRoleRepository userRoleRepository;
     private final ServiceRepository serviceRepository;
     private final ReservationRepository reservationRepository;
+    private final DateService dateService;
+    private final DateRepository dateRepository;
 
 
-    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository,ServiceRepository serviceRepository, ReservationRepository reservationRepository) {
+    public BarbershopController(BarbershopRepository barbershopRepository, UserRoleRepository userRoleRepository, ServiceRepository serviceRepository, ReservationRepository reservationRepository, DateService dateService, DateRepository dateRepository) {
         this.barbershopRepository = barbershopRepository;
         this.userRoleRepository = userRoleRepository;
         this.serviceRepository = serviceRepository;
         this.reservationRepository = reservationRepository;
+        this.dateService = dateService;
+        this.dateRepository = dateRepository;
     }
 
     @GetMapping("/registration")
@@ -45,6 +52,7 @@ public class BarbershopController {
         if(bindingResult.hasErrors()){
             return "registration-barbershop";
         }
+        barbershop.setDates(dateRepository.findAll());
         barbershop.setPassword(BCrypt.hashpw(barbershop.getPassword(),BCrypt.gensalt()));
         UserRole userRole = new UserRole();
         userRole.setUsername(barbershop.getEmail());

@@ -13,7 +13,9 @@
     <title>Barbershop Details</title>
 </head>
 <body>
-<table border="1">
+<%@include file="header.jsp"%>
+
+<table class="table table-borderless table-dark">
     <tr>
         <th>Address</th>
         <th>City</th>
@@ -38,6 +40,47 @@
             <td>${barbershops.close}</td>
         </tr>
     </c:forEach>
+</table>
+<br/>
+<table class="table table-borderless table-dark">
+    <tr>
+        <th>Address</th>
+        <th>City</th>
+        <th>Phone Number</th>
+        <th>Email</th>
+        <th>Open</th>
+        <th>Close</th>
+    </tr>
+    <c:forEach var="barbershops" items="${barbershops}">
+        <tr>
+            <td>${barbershops.address}</td>
+            <td>${barbershops.city}</td>
+            <td>${barbershops.phoneNumber}</td>
+            <td>${barbershops.email}</td>
+            <td>${barbershops.open}</td>
+            <td>${barbershops.close}</td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Zarezerwuj wizytę</a> </td>
+        </tr>
+    </c:forEach>
+
+
+</table>
+
+<table class="table table-borderless table-dark">
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+
+    </tr>
+    <c:forEach var="service" items="${service}">
+        <tr>
+            <td>${service.name}</td>
+            <td>${service.price}</td>
+            <td>${service.time}</td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded//user/login/panel/barbershop/reservation/${barbershopId}/${service.id}"> Zarezerwuj </a> </td>
+        </tr>
+    </c:forEach>
+
 </table>
 
 

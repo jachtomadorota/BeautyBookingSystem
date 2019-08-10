@@ -12,19 +12,19 @@
     <title>Slots</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
 
-<table border="1">
+<table  class="table table-borderless table-dark">
     <tr>
 
     </tr>
     <c:forEach var="slot" items="${slots}">
         <tr>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershopId}/${service}/${date}/${slot.id}">${slot.time}</a></td>
+            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershopId}/${serviceId}/${dateId}/${slot.id}" onclick="return confirm('Are you sure you want to make reservation')">${slot.time}</a></td>
         </tr>
     </c:forEach>
 
 </table>
-
 
 
 </body>

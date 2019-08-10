@@ -20,7 +20,7 @@ public class Service {
     private String price;
     @NotBlank
     private String time;
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.EAGER)
     private Barbershop barbershop;
 
 

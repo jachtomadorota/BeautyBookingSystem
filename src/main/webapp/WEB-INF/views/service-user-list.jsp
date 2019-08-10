@@ -12,8 +12,9 @@
     <title>Services</title>
 </head>
 <body>
+<%@include file="header.jsp"%>
 
-<table border="1">
+<table class="table table-borderless table-dark">
     <tr>
         <th>Name</th>
         <th>Price</th>

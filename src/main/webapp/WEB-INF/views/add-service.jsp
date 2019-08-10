@@ -10,11 +10,41 @@
 <html>
 <head>
     <title>Add/Update services</title>
+    <style>
+    body:before{
+    content: '';
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    filter: blur(10px);
+    }
+    form
+    {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    height: 500px;
+    padding: 80px 40px;
+    box-sizing: border-box;
+    background: rgba(0,0,0,.5);
+    }
+    </style>
 </head>
 <body>
 
+<%@include file="header.jsp"%>
 
-<form:form method="post" modelAttribute="service">
+<form:form method="post" modelAttribute="service" frame="box">
 
     <label for="id"></label>
     <form:input path="id" id="id" type="hidden"/>
@@ -34,7 +64,6 @@
 
     <input type="submit" value="Submit">
 </form:form>
-
 
 </body>
 </html>

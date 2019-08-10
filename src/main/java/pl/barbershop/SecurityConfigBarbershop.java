@@ -42,7 +42,10 @@ public class SecurityConfigBarbershop extends WebSecurityConfigurerAdapter {
         http.antMatcher("/barbershop/login/*").authorizeRequests()
                 .anyRequest().access("hasRole('ROLE_BARBERSHOP')")
                 .and().formLogin()
+                .loginPage("/login")
                 .defaultSuccessUrl("/")
+                .and().exceptionHandling()
+                .accessDeniedPage("/access_denied")
                 .and().logout()
                 .logoutSuccessUrl("/");
         http.csrf().disable();

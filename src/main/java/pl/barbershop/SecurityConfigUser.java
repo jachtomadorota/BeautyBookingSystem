@@ -42,7 +42,10 @@ public class SecurityConfigUser extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/user/login/*").access("hasRole('ROLE_USER')")
                 .and().formLogin()
+                .loginPage("/login")
                 .defaultSuccessUrl("/")
+                .and().exceptionHandling()
+                .accessDeniedPage("/access_denied")
                 .and().logout()
                 .logoutSuccessUrl("/");
         http.csrf().disable();

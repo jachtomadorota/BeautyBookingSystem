@@ -31,9 +31,9 @@ public class Barbershop {
     
     @Size(min = 9,max = 9)
     private String phoneNumber;
-    
+
     @OneToMany(fetch = FetchType.EAGER)
-    Set<Service> services;
+    private Set<Service> services;
 
     @Email
     @NotBlank
@@ -47,13 +47,13 @@ public class Barbershop {
     private String close;
     
     @OneToMany
-    private Set<Date> dates;
+    private List<Date> dates;
     
     @NotBlank
     @Size(min = 100,max = 450)
     private String description;
 
-    @OneToMany
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Reservation> reservation;
 
     @NotBlank
@@ -136,11 +136,11 @@ public class Barbershop {
         this.close = close;
     }
 
-    public Set<Date> getDates() {
+    public List<Date> getDates() {
         return dates;
     }
 
-    public void setDates(Set<Date> dates) {
+    public void setDates(List<Date> dates) {
         this.dates = dates;
     }
 

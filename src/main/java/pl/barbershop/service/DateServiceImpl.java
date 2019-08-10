@@ -4,36 +4,38 @@ import org.springframework.stereotype.Service;
 import pl.barbershop.model.Barbershop;
 import pl.barbershop.model.Date;
 import pl.barbershop.model.Slot;
+import pl.barbershop.repository.DateRepository;
 import pl.barbershop.repository.SlotRepository;
+
+import javax.swing.text.DateFormatter;
+import javax.transaction.Transactional;
+import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
 public class DateServiceImpl implements DateService{
 
-    private final SlotRepository slotRepository;
+    private final DateRepository dateRepository;
 
-
-
-
-    public DateServiceImpl(SlotRepository slotRepository) {
-        this.slotRepository = slotRepository;
+    public DateServiceImpl(DateRepository dateRepository) {
+        this.dateRepository = dateRepository;
     }
 
+
     @Override
-    public List<Slot> setSlotsInDate(Date date,pl.barbershop.model.Service service, Barbershop barbershop) {
-        List<Slot> slotList = date.getSlots();
-        String duration = service.getTime();
-        String open = barbershop.getOpen();
-        String close = barbershop.getClose();
-        for(int i = Integer.parseInt(open); i < Integer.parseInt(close); LocalTime.parse(open).plusMinutes(Long.parseLong(duration))){
-            Slot slot = new Slot();
-            slot.setTime(String.valueOf(i));
-            slot.setDate(date);
-            slot.setAvaible(true);
-            slotList.add(slot);
-            slotRepository.save(slot);
-        }
-        return  slotList;
+    public List<Date> setDays() {
+        List<Date> dates = new ArrayList<>();
+        LocalDate localDate = LocalDate.now();
+
+       for(int i = localDate.getDayOfYear(); i < 355; i++) {
+           Date date = new Date();
+           DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("MM/d/uuuu");
+           date.setDay(LocalDate.ofYearDay(2019,i).format(dateTimeFormatter).toString());
+           dates.add(date);
+       }
+       return dates;
     }
 }

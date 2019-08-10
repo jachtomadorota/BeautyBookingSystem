@@ -1,18 +1,21 @@
 package pl.barbershop.model;
 
+import org.hibernate.annotations.Proxy;
+
 import javax.persistence.*;
 
 @Entity
+@Proxy(lazy=false)
 @Table(name = "slots")
 public class Slot {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne
-    private Date date;
     private boolean avaible;
     private String time;
+
+
 
     public Long getId() {
         return id;
@@ -20,14 +23,6 @@ public class Slot {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
     }
 
     public boolean isAvaible() {
@@ -45,4 +40,5 @@ public class Slot {
     public void setTime(String time) {
         this.time = time;
     }
+
 }
