@@ -46,7 +46,7 @@ public class Barbershop {
     @NotBlank
     private String close;
 
-    @OneToMany(cascade = CascadeType.MERGE)
+    @ManyToMany(fetch = FetchType.EAGER)
     private List<Date> dates;
 
     @NotBlank

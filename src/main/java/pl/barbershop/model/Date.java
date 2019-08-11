@@ -20,6 +20,8 @@ public class Date {
     private String day;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Slot> slots;
+    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "dates")
+    private List<Barbershop> barbershops;
 
 
 
@@ -47,6 +49,13 @@ public class Date {
         this.slots = slots;
     }
 
+    public List<Barbershop> getBarbershops() {
+        return barbershops;
+    }
+
+    public void setBarbershops(List<Barbershop> barbershops) {
+        this.barbershops = barbershops;
+    }
 
     @Override
     public String toString() {

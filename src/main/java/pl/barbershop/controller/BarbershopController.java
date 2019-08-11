@@ -57,9 +57,9 @@ public class BarbershopController {
         UserRole userRole = new UserRole();
         userRole.setUsername(barbershop.getEmail());
         userRole.setRole("ROLE_BARBERSHOP");
+        barbershop.setDates(dateRepository.findAll());
         userRoleRepository.save(userRole);
         barbershopRepository.save(barbershop);
-
         return "redirect:/";
     }
 
