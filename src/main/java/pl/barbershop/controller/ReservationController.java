@@ -127,7 +127,8 @@ public class ReservationController {
             model.addAttribute("reservation",reservations);
             return "reservation-list";
         }
-        return "redirect:/login";
+        model.addAttribute("loged",false);
+        return "login";
 
     }
 }

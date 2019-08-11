@@ -46,7 +46,7 @@ public class Barbershop {
     @NotBlank
     private String close;
 
-    @ManyToMany(fetch = FetchType.EAGER)
+    @ManyToMany
     private List<Date> dates;
 
     @NotBlank

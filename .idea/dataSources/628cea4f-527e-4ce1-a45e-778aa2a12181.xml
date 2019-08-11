@@ -1065,7 +1065,7 @@
       <ColNames>nip</ColNames>
       <UnderlyingIndexName>UK_lnwxwijlram3fup1bqwupxiem</UnderlyingIndexName>
     </key>
-    <column id="271" parent="244" name="Barbershop_id">
+    <column id="271" parent="244" name="barbershops_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
@@ -1077,370 +1077,365 @@
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="273" parent="244" name="UK_sjlge79arwwkhl113w9gh2utx">
-      <ColNames>dates_id</ColNames>
-      <Unique>1</Unique>
+    <index id="273" parent="244" name="FKoma94yi75rcek8ltog8yyrk4r">
+      <ColNames>barbershops_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="274" parent="244" name="FK4c73ap97orn6vab5oepadupu7">
-      <ColNames>Barbershop_id</ColNames>
+    <index id="274" parent="244" name="FKrww8ghvty4qc6394yd4mwblkr">
+      <ColNames>dates_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="275" parent="244" name="UK_sjlge79arwwkhl113w9gh2utx">
-      <ColNames>dates_id</ColNames>
-      <UnderlyingIndexName>UK_sjlge79arwwkhl113w9gh2utx</UnderlyingIndexName>
-    </key>
-    <foreign-key id="276" parent="244" name="FK4c73ap97orn6vab5oepadupu7">
-      <ColNames>Barbershop_id</ColNames>
+    <foreign-key id="275" parent="244" name="FKoma94yi75rcek8ltog8yyrk4r">
+      <ColNames>barbershops_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>barbershops</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="277" parent="244" name="FKrww8ghvty4qc6394yd4mwblkr">
+    <foreign-key id="276" parent="244" name="FKrww8ghvty4qc6394yd4mwblkr">
       <ColNames>dates_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>dates</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="278" parent="245" name="Barbershop_id">
+    <column id="277" parent="245" name="Barbershop_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="279" parent="245" name="services_id">
+    <column id="278" parent="245" name="services_id">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="280" parent="245" name="UK_prs1h9c7u3wkijs12sombwmhs">
+    <index id="279" parent="245" name="UK_prs1h9c7u3wkijs12sombwmhs">
       <ColNames>services_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="281" parent="245" name="PRIMARY">
+    <key id="280" parent="245" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>Barbershop_id
 services_id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="282" parent="245" name="UK_prs1h9c7u3wkijs12sombwmhs">
+    <key id="281" parent="245" name="UK_prs1h9c7u3wkijs12sombwmhs">
       <ColNames>services_id</ColNames>
       <UnderlyingIndexName>UK_prs1h9c7u3wkijs12sombwmhs</UnderlyingIndexName>
     </key>
-    <foreign-key id="283" parent="245" name="FKincn5e9v1kvr7066vbrr7qfkd">
+    <foreign-key id="282" parent="245" name="FKincn5e9v1kvr7066vbrr7qfkd">
       <ColNames>Barbershop_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>barbershops</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="284" parent="245" name="FKfltbrfrs8h7imkufc2b63jxur">
+    <foreign-key id="283" parent="245" name="FKfltbrfrs8h7imkufc2b63jxur">
       <ColNames>services_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>services</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="285" parent="246" name="id">
+    <column id="284" parent="246" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="286" parent="246" name="day">
+    <column id="285" parent="246" name="day">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="287" parent="246" name="PRIMARY">
+    <key id="286" parent="246" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="288" parent="247" name="Date_id">
+    <column id="287" parent="247" name="Date_id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="289" parent="247" name="slots_id">
+    <column id="288" parent="247" name="slots_id">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="290" parent="247" name="UK_qgc2ti5g01x8vbu2sej86kp5e">
+    <index id="289" parent="247" name="UK_qgc2ti5g01x8vbu2sej86kp5e">
       <ColNames>slots_id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="291" parent="247" name="FKs0r2hpt934ljxxhawkhjcb16x">
+    <index id="290" parent="247" name="FKs0r2hpt934ljxxhawkhjcb16x">
       <ColNames>Date_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="292" parent="247" name="UK_qgc2ti5g01x8vbu2sej86kp5e">
+    <key id="291" parent="247" name="UK_qgc2ti5g01x8vbu2sej86kp5e">
       <ColNames>slots_id</ColNames>
       <UnderlyingIndexName>UK_qgc2ti5g01x8vbu2sej86kp5e</UnderlyingIndexName>
     </key>
-    <foreign-key id="293" parent="247" name="FKs0r2hpt934ljxxhawkhjcb16x">
+    <foreign-key id="292" parent="247" name="FKs0r2hpt934ljxxhawkhjcb16x">
       <ColNames>Date_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>dates</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="294" parent="247" name="FK74kotbeoe2hnlys5utx53yrcw">
+    <foreign-key id="293" parent="247" name="FK74kotbeoe2hnlys5utx53yrcw">
       <ColNames>slots_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>slots</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="295" parent="248" name="id">
+    <column id="294" parent="248" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="296" parent="248" name="barbershop_id">
+    <column id="295" parent="248" name="barbershop_id">
       <Position>2</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="297" parent="248" name="date_id">
+    <column id="296" parent="248" name="date_id">
       <Position>3</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="298" parent="248" name="service_id">
+    <column id="297" parent="248" name="service_id">
       <Position>4</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="299" parent="248" name="slot_id">
+    <column id="298" parent="248" name="slot_id">
       <Position>5</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="300" parent="248" name="user_id">
+    <column id="299" parent="248" name="user_id">
       <Position>6</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="301" parent="248" name="FKi6dv5pnjn01y3k0wnsfdsf3jf">
+    <index id="300" parent="248" name="FKi6dv5pnjn01y3k0wnsfdsf3jf">
       <ColNames>barbershop_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="302" parent="248" name="FK7v0m0k51eg5cfi3186604rp2v">
+    <index id="301" parent="248" name="FK7v0m0k51eg5cfi3186604rp2v">
       <ColNames>date_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="303" parent="248" name="FK3ww618ll729ubr3pb5krt9d3h">
+    <index id="302" parent="248" name="FK3ww618ll729ubr3pb5krt9d3h">
       <ColNames>service_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="304" parent="248" name="FKgbn8ggqmrx2jmwu6cmolrtavv">
+    <index id="303" parent="248" name="FKgbn8ggqmrx2jmwu6cmolrtavv">
       <ColNames>slot_id</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="305" parent="248" name="FKb5g9io5h54iwl2inkno50ppln">
+    <index id="304" parent="248" name="FKb5g9io5h54iwl2inkno50ppln">
       <ColNames>user_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="306" parent="248" name="PRIMARY">
+    <key id="305" parent="248" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="307" parent="248" name="FKi6dv5pnjn01y3k0wnsfdsf3jf">
+    <foreign-key id="306" parent="248" name="FKi6dv5pnjn01y3k0wnsfdsf3jf">
       <ColNames>barbershop_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>barbershops</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="308" parent="248" name="FK7v0m0k51eg5cfi3186604rp2v">
+    <foreign-key id="307" parent="248" name="FK7v0m0k51eg5cfi3186604rp2v">
       <ColNames>date_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>dates</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="309" parent="248" name="FK3ww618ll729ubr3pb5krt9d3h">
+    <foreign-key id="308" parent="248" name="FK3ww618ll729ubr3pb5krt9d3h">
       <ColNames>service_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>services</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="310" parent="248" name="FKgbn8ggqmrx2jmwu6cmolrtavv">
+    <foreign-key id="309" parent="248" name="FKgbn8ggqmrx2jmwu6cmolrtavv">
       <ColNames>slot_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>slots</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <foreign-key id="311" parent="248" name="FKb5g9io5h54iwl2inkno50ppln">
+    <foreign-key id="310" parent="248" name="FKb5g9io5h54iwl2inkno50ppln">
       <ColNames>user_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="312" parent="249" name="id">
+    <column id="311" parent="249" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="313" parent="249" name="name">
+    <column id="312" parent="249" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="314" parent="249" name="price">
+    <column id="313" parent="249" name="price">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="315" parent="249" name="time">
+    <column id="314" parent="249" name="time">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="316" parent="249" name="barbershop_id">
+    <column id="315" parent="249" name="barbershop_id">
       <Position>5</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="317" parent="249" name="FK3gik7n3g4mrviyxere0oalpg6">
+    <index id="316" parent="249" name="FK3gik7n3g4mrviyxere0oalpg6">
       <ColNames>barbershop_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="318" parent="249" name="PRIMARY">
+    <key id="317" parent="249" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="319" parent="249" name="FK3gik7n3g4mrviyxere0oalpg6">
+    <foreign-key id="318" parent="249" name="FK3gik7n3g4mrviyxere0oalpg6">
       <ColNames>barbershop_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>barbershops</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="320" parent="250" name="id">
+    <column id="319" parent="250" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="321" parent="250" name="avaible">
+    <column id="320" parent="250" name="avaible">
       <Position>2</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="322" parent="250" name="time">
+    <column id="321" parent="250" name="time">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="323" parent="250" name="PRIMARY">
+    <key id="322" parent="250" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="324" parent="251" name="id">
+    <column id="323" parent="251" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="325" parent="251" name="role">
+    <column id="324" parent="251" name="role">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="326" parent="251" name="username">
+    <column id="325" parent="251" name="username">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="327" parent="251" name="PRIMARY">
+    <key id="326" parent="251" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="328" parent="252" name="id">
+    <column id="327" parent="252" name="id">
       <Position>1</Position>
       <DataType>bigint(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="329" parent="252" name="email">
+    <column id="328" parent="252" name="email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="330" parent="252" name="enabled">
+    <column id="329" parent="252" name="enabled">
       <Position>3</Position>
       <DataType>bit(1)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="331" parent="252" name="firstName">
+    <column id="330" parent="252" name="firstName">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="332" parent="252" name="lastName">
+    <column id="331" parent="252" name="lastName">
       <Position>5</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="333" parent="252" name="password">
+    <column id="332" parent="252" name="password">
       <Position>6</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="334" parent="252" name="phoneNumber">
+    <column id="333" parent="252" name="phoneNumber">
       <Position>7</Position>
       <DataType>varchar(9)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="335" parent="252" name="reservation_id">
+    <column id="334" parent="252" name="reservation_id">
       <Position>8</Position>
       <DataType>bigint(20)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="336" parent="252" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+    <index id="335" parent="252" name="UK_6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="337" parent="252" name="FKid17hpohmeqi8hv4jjo1ut4sa">
+    <index id="336" parent="252" name="FKid17hpohmeqi8hv4jjo1ut4sa">
       <ColNames>reservation_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="338" parent="252" name="PRIMARY">
+    <key id="337" parent="252" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="339" parent="252" name="UK_6dotkott2kjsp8vw4d0m25fb7">
+    <key id="338" parent="252" name="UK_6dotkott2kjsp8vw4d0m25fb7">
       <ColNames>email</ColNames>
       <UnderlyingIndexName>UK_6dotkott2kjsp8vw4d0m25fb7</UnderlyingIndexName>
     </key>
-    <foreign-key id="340" parent="252" name="FKid17hpohmeqi8hv4jjo1ut4sa">
+    <foreign-key id="339" parent="252" name="FKid17hpohmeqi8hv4jjo1ut4sa">
       <ColNames>reservation_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>reservations</RefTableName>

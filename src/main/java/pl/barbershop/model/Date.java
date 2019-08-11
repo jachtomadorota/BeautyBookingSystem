@@ -18,9 +18,9 @@ public class Date {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String day;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER)
     private List<Slot> slots;
-    @ManyToMany(fetch = FetchType.EAGER,mappedBy = "dates")
+    @ManyToMany(mappedBy = "dates")
     private List<Barbershop> barbershops;
 
 
