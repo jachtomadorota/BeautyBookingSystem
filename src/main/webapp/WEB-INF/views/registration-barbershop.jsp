@@ -31,12 +31,17 @@
 <h3 align="center">Sign up</h3>
 <div align="center" id="formDiv">
 <form:form method="post" modelAttribute="barbershop" align="center">
+
+    <form:input path="id" id="idId" type="hidden" class="form-control"/>
+    <form:errors path="id" element="div"></form:errors>
+
     <div class="form-group">
         <label for="addressId">Address</label>
 
     <form:input path="address" id="addressId" type="text" class="form-control"/>
     <form:errors path="address" element="div"></form:errors>
     </div>
+
 
     <div class="form-group">
         <label for="cityId">City</label>
@@ -71,6 +76,13 @@
 
     <form:input path="close" id="closeId" type="text" class="form-control"/>
     <form:errors path="close" element="div"></form:errors>
+    </div>
+
+    <div class="form-group">
+        <label for="workId">Work on saturdays</label>
+
+        <form:checkbox path="workInSaturdays" id="workId" class="form-control"/>
+        <form:errors path="address" element="div"></form:errors>
     </div>
 
     <div class="form-group">

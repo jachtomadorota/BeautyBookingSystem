@@ -25,10 +25,10 @@ public class Barbershop {
 
     @NotBlank
     private String address;
-    
+
     @NotBlank
     private String city;
-    
+
     @Size(min = 9,max = 9)
     private String phoneNumber;
 
@@ -42,19 +42,17 @@ public class Barbershop {
 
     @NotBlank
     private String open;
-    
+
     @NotBlank
     private String close;
-    
-    @OneToMany
+
+    @OneToMany(cascade = CascadeType.MERGE)
     private List<Date> dates;
-    
+
     @NotBlank
     @Size(min = 100,max = 450)
     private String description;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    private List<Reservation> reservation;
 
     @NotBlank
     @Size(min = 6)
@@ -69,6 +67,8 @@ public class Barbershop {
     @NotNull
     @Value("${barbershop.enabled=true}")
     private boolean enabled = true;
+
+    private boolean workInSaturdays;
 
 
     public Long getId() {
@@ -152,13 +152,6 @@ public class Barbershop {
         this.description = description;
     }
 
-    public List<Reservation> getReservation() {
-        return reservation;
-    }
-
-    public void setReservation(List<Reservation> reservation) {
-        this.reservation = reservation;
-    }
 
     public String getPassword() {
         return password;
@@ -192,4 +185,12 @@ public class Barbershop {
         this.enabled = enabled;
     }
 
+
+    public boolean isWorkInSaturdays() {
+        return workInSaturdays;
+    }
+
+    public void setWorkInSaturdays(boolean workInSaturdays) {
+        this.workInSaturdays = workInSaturdays;
+    }
 }

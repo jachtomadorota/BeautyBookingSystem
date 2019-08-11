@@ -53,11 +53,14 @@ public class ReservationController {
 
     @GetMapping("/{barbershop_id}/{service_id}")
     public String chooseDateGet(Model model, @PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId) {
+        Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
+        model.addAttribute("work",optionalBarbershop.get().isWorkInSaturdays());
         return "calendar";
     }
 
     @PostMapping("/{barbershop_id}/{service_id}")
     public String chooseSlot(Model model, @PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId, @RequestParam("date") String date) {
+
         String parsed = date.replace("%2F", "/");
         Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
         Optional<Service> optionalService = serviceRepository.findById(serviceId);
@@ -65,41 +68,63 @@ public class ReservationController {
         String close = optionalBarbershop.get().getClose();
         String duration = optionalService.get().getTime();
         List<Slot> slots = new ArrayList<>();
-        if (slotRepository.findAll().isEmpty()) {
+        Date finalDate = dateRepository.checkDate(parsed);
+
+        if (finalDate.getSlots().isEmpty()) {
             for (Slot slot : slotService.setSlot(open, close, duration)) {
                 slotRepository.save(slot);
                 slots.add(slot);
+                finalDate.setSlots(slots);
+                dateRepository.save(finalDate);
+            }
+        }else{
+            for(Slot s : finalDate.getSlots()){
+                if(s.isAvaible()){
+                    slots.add(s);
+                    finalDate.setSlots(slots);
+                    dateRepository.save(finalDate);
+                }
             }
         }
+
+            model.addAttribute("slots", slotService.checkIsAvaible(slots));
+
+
         model.addAttribute("barbershopId", barbershopId);
         model.addAttribute("serviceId", serviceId);
-        model.addAttribute("dateId", dateRepository.checkDate(parsed).getId());
-        model.addAttribute("slots", slots);
+        model.addAttribute("dateId", finalDate.getId());
+
         return "slots-list";
 
     }
 
     @GetMapping("/{barbershop_id}/{service_id}/{dateId}/{slotId}")
     public String chooseSlot(Model model,@PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId, @PathVariable("dateId") Long dateId, @PathVariable("slotId") Long slotId) {
+
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
             String username = ((UserDetails) principal).getUsername();
             User user = userRepository.findByEmail(username);
             Reservation reservation = new Reservation();
+
             Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
             Optional<Service> optionalService = serviceRepository.findById(serviceId);
             Optional<Date> optionalDate = dateRepository.findById(dateId);
             Optional<Slot> optionalSlot = slotRepository.findById(slotId);
+
             reservation.setSlot(optionalSlot.get());
             reservation.setBarbershop(optionalBarbershop.get());
             reservation.setService(optionalService.get());
             reservation.setDate(optionalDate.get());
             reservation.setUser(user);
             reservationRepository.save(reservation);
+
+            optionalSlot.get().setAvaible(false);
+            slotRepository.save(optionalSlot.get());
+
             List<Reservation> reservations = new ArrayList<>();
             reservations.add(reservation);
-            optionalBarbershop.get().setReservation(reservations);
-            model.addAttribute("reservation",reservation);
+            model.addAttribute("reservation",reservations);
             return "reservation-list";
         }
         return "redirect:/login";

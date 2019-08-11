@@ -26,6 +26,10 @@
 <div align="center" id="formDiv">
 
 <form:form method="post" modelAttribute="user" align="center" id="formDiv">
+
+    <form:input path="id" id="id" type="hidden" class="form-control"/>
+    <form:errors path="id" element="div"></form:errors>/
+
         <div class="form-group">
             <label for="firstNameId">First Name</label>
     <form:input path="firstName" id="firstNameId" type="text" class="form-control"/>

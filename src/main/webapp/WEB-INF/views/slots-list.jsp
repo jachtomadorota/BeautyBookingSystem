@@ -10,11 +10,45 @@
 <html>
 <head>
     <title>Slots</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        body:before{
+            content: '';
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -moz-filter: blur(10px);
+            -o-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .contact-form
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 400px;
+            height: 500px;
+            padding: 80px 40px;
+            box-sizing: border-box;
+            background: rgba(0,0,0,.5);
+            align-items: center;
+        }
+
+    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>
-
-<table  class="table table-borderless table-dark">
+<table  class="contact-form" align="center">
     <tr>
 
     </tr>
@@ -25,7 +59,6 @@
     </c:forEach>
 
 </table>
-
 
 </body>
 </html>

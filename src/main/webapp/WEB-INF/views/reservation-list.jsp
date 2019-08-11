@@ -25,7 +25,6 @@
             <td>${reservation.barbershop.address}</td>
             <td>${reservation.barbershop.city}</td>
             <td>${reservation.barbershop.email}</td>
-            <td>${reservation.barber.name}</td>
         </tr>
     </c:forEach>
 

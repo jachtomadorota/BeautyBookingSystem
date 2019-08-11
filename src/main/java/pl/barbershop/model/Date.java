@@ -1,5 +1,6 @@
 package pl.barbershop.model;
 
+import jdk.nashorn.internal.runtime.AllocationStrategy;
 import org.hibernate.annotations.Proxy;
 import org.springframework.beans.factory.annotation.Value;
 
@@ -19,6 +20,7 @@ public class Date {
     private String day;
     @OneToMany(cascade = CascadeType.ALL)
     private List<Slot> slots;
+
 
 
     public Long getId() {
@@ -44,6 +46,7 @@ public class Date {
     public void setSlots(List<Slot> slots) {
         this.slots = slots;
     }
+
 
     @Override
     public String toString() {

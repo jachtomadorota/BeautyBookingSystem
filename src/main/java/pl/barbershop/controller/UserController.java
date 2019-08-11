@@ -80,17 +80,18 @@ public class UserController {
 
     @GetMapping("/login/panel/details/update/{id}")
     public String updateUserGet(Model model,@PathVariable Long id){
+
         model.addAttribute("user",userRepository.getOne(id));
         return "registration-user";
     }
 
     @PostMapping("/login/panel/details/update/{id}")
-    public String updateUserPost(@PathVariable Long id,@Valid User user,BindingResult bindingResult){
+    public String updateUserPost(@PathVariable Long id, @Valid User user,BindingResult bindingResult){
         if(bindingResult.hasErrors()){
             return "registration-user";
         }
         userRepository.save(user);
-        return "redirect:user/login/panel/details";
+        return "redirect:/";
     }
 
     @GetMapping("/login/panel/reservation")

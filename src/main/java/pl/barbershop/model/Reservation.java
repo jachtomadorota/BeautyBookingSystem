@@ -14,15 +14,15 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
     private User user;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
     private Barbershop barbershop;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
     private Date date;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
     private Service service;
-    @OneToOne(cascade = CascadeType.ALL)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
     private Slot slot;
 
     public Long getId() {

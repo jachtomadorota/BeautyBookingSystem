@@ -52,13 +52,14 @@ public class BarbershopController {
         if(bindingResult.hasErrors()){
             return "registration-barbershop";
         }
-        barbershop.setDates(dateRepository.findAll());
+
         barbershop.setPassword(BCrypt.hashpw(barbershop.getPassword(),BCrypt.gensalt()));
         UserRole userRole = new UserRole();
         userRole.setUsername(barbershop.getEmail());
         userRole.setRole("ROLE_BARBERSHOP");
         userRoleRepository.save(userRole);
         barbershopRepository.save(barbershop);
+
         return "redirect:/";
     }
 
@@ -73,14 +74,14 @@ public class BarbershopController {
     public String getBarbershopDetails(Model model){
         Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         if (principal instanceof UserDetails) {
-                String username = ((UserDetails) principal).getUsername();
-                List<Barbershop> barbershopList = new ArrayList<>();
-                barbershopList.add(barbershopRepository.findByEmail(username));
-                model.addAttribute("barbershops", barbershopList);
-                return "barbershop-details";
-            } else {
-                return "redirect:/login";
-            }
+            String username = ((UserDetails) principal).getUsername();
+            List<Barbershop> barbershopList = new ArrayList<>();
+            barbershopList.add(barbershopRepository.findByEmail(username));
+            model.addAttribute("barbershops", barbershopList);
+            return "barbershop-details";
+        } else {
+            return "redirect:/login";
+        }
     }
 
     @GetMapping("/login/panel/services")

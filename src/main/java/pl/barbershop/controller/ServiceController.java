@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import pl.barbershop.model.Barbershop;
+import pl.barbershop.model.Date;
 import pl.barbershop.model.Service;
 import pl.barbershop.repository.BarbershopRepository;
+import pl.barbershop.repository.DateRepository;
 import pl.barbershop.repository.ServiceRepository;
+import pl.barbershop.service.DateServiceImpl;
 
 import javax.validation.Valid;
 
@@ -24,11 +27,10 @@ public class ServiceController {
     private final ServiceRepository serviceRepository;
     private final BarbershopRepository barbershopRepository;
 
-    public ServiceController(ServiceRepository serviceRepository,BarbershopRepository barbershopRepository) {
+    public ServiceController(ServiceRepository serviceRepository, BarbershopRepository barbershopRepository) {
         this.serviceRepository = serviceRepository;
         this.barbershopRepository = barbershopRepository;
     }
-
 
     @GetMapping("/add")
     public String addServiceGet(Model model){
@@ -46,10 +48,14 @@ public class ServiceController {
         if (principal instanceof UserDetails) {
             String username = ((UserDetails) principal).getUsername();
             Barbershop barbershop = barbershopRepository.findByEmail(username);
+            serviceRepository.save(service);
+            barbershop.getServices().add(service);
             service.setBarbershop(barbershop);
+            barbershopRepository.save(barbershop);
             serviceRepository.save(service);
         }
-        return "barbershop-panel";
+
+        return "redirect:/barbershop/login/panel/services";
     }
 
     @GetMapping("/delete/{id}")

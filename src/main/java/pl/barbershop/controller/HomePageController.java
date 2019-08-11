@@ -35,10 +35,7 @@ public class HomePageController {
     public String homepage(Model model){
         if(dateRepository.findAll().isEmpty()) {
             for(Date date : dateService.setDays()) {
-                    dateRepository.save(date);
-                System.out.println(dateService.setDays().toString());
-                System.out.println(date.toString());
-
+                dateRepository.save(date);
             }
         }
         model.addAttribute("barbershops",barbershopRepository.findAll());
