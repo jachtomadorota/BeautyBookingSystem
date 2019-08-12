@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import pl.barbershop.model.*;
 import pl.barbershop.repository.*;
 import pl.barbershop.service.DateServiceImpl;
+import pl.barbershop.service.EmailServiceImpl;
 import pl.barbershop.service.SlotServiceImpl;
 
 import java.util.ArrayList;
@@ -30,9 +31,10 @@ public class ReservationController {
     private final SlotServiceImpl slotService;
     private final UserRepository userRepository;
     private final ReservationRepository reservationRepository;
+    private final EmailServiceImpl emailService;
 
 
-    public ReservationController(ServiceRepository serviceRepository, BarbershopRepository barbershopRepository, DateRepository dateRepository, SlotRepository slotRepository, DateServiceImpl dateService, SlotServiceImpl slotService, UserRepository userRepository, ReservationRepository reservationRepository) {
+    public ReservationController(ServiceRepository serviceRepository, BarbershopRepository barbershopRepository, DateRepository dateRepository, SlotRepository slotRepository, DateServiceImpl dateService, SlotServiceImpl slotService, UserRepository userRepository, ReservationRepository reservationRepository, EmailServiceImpl emailService) {
         this.serviceRepository = serviceRepository;
         this.barbershopRepository = barbershopRepository;
         this.dateRepository = dateRepository;
@@ -41,6 +43,7 @@ public class ReservationController {
         this.slotService = slotService;
         this.userRepository = userRepository;
         this.reservationRepository = reservationRepository;
+        this.emailService = emailService;
     }
 
     @GetMapping("/{barbershop_id}")
@@ -123,8 +126,12 @@ public class ReservationController {
             optionalSlot.get().setAvaible(false);
             slotRepository.save(optionalSlot.get());
 
+
             List<Reservation> reservations = new ArrayList<>();
             reservations.add(reservation);
+            emailService.sendSimpleMessage(user.getEmail(),"Reservation","You made reservation to " + " " + optionalBarbershop.get().getName()
+            + " " + ". Barbershop is located on " + optionalBarbershop.get().getAddress() + " " + optionalBarbershop.get().getCity() +
+                  " at " + optionalSlot.get().getTime() + " " + optionalDate.get().getDay());
             model.addAttribute("reservation",reservations);
             return "reservation-list";
         }

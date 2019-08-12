@@ -7,22 +7,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82175a9c-b656-418b-aca3-5cae0043ad2d" name="Default Changelist" comment="Close 3# 4#">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.jsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigBarbershop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigBarbershop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/HomePageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/HomePageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-service.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/add-service.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-panel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-panel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/calendar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/calendar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration-barbershop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration-barbershop.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/service-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/service-list.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/AppConfig.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigBarbershop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigBarbershop.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigUser.class" afterDir="false" />
@@ -111,27 +103,102 @@
     <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="40">
+              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="44">
+              <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://628cea4f-527e-4ce1-a45e-778aa2a12181/schema/barbershop/table/users">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="63">
+              <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="105">
+              <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
-        <option value="Class" />
         <option value="JavaScript File" />
         <option value="Jsp File" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="addEmailRegistration" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Day.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/jogin.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/app.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/login.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/resources/footer.css" />
@@ -145,14 +212,11 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-search.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/hour.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/converter/DateConverter.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/repository/SlotRepository.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Reservation.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Service.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Slot.java" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reservation-list.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ServiceController.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/service/SlotService.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/service/SlotServiceImpl.java" />
@@ -169,7 +233,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/calendar.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/static/datepicker.js" />
-        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/service-list.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-details.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/registration-user.jsp" />
@@ -180,6 +243,13 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/access-denied.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigBarbershop.java" />
         <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/SecurityConfigUser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java" />
       </list>
     </option>
   </component>
@@ -276,6 +346,67 @@
               <item name="pl" type="462c0819:PsiDirectoryNode" />
               <item name="barbershop" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pl" type="462c0819:PsiDirectoryNode" />
+              <item name="barbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pl" type="462c0819:PsiDirectoryNode" />
+              <item name="barbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="repository" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="pl" type="462c0819:PsiDirectoryNode" />
+              <item name="barbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="eBarbershop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="eBarbershop" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -422,7 +553,7 @@
       <workItem from="1565429917917" duration="471000" />
       <workItem from="1565444716547" duration="3000" />
       <workItem from="1565444797426" duration="5790000" />
-      <workItem from="1565451913061" duration="56878000" />
+      <workItem from="1565451913061" duration="59397000" />
     </task>
     <task id="LOCAL-00001" summary="add modeles, add HomePage UserController, BarbershopController and views for user login">
       <created>1564309146328</created>
@@ -494,11 +625,18 @@
       <option name="project" value="LOCAL" />
       <updated>1565542008598</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Close 3# 4#">
+      <created>1565642119553</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1565642119553</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="305351000" />
+    <option name="totallyTimeSpent" value="307870000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -511,6 +649,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="67" y="25" width="1299" height="743" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4973822" visible="true" weight="0.22665602" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -536,7 +675,7 @@
       <window_info anchor="bottom" id="Spring" order="12" weight="0.34031415" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" weight="0.64223385" />
-      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49880287" weight="0.32984293" />
+      <window_info anchor="bottom" id="Messages" order="15" sideWeight="0.49880287" weight="0.65619546" />
       <window_info anchor="bottom" id="Run" order="16" sideWeight="0.49880287" weight="0.67713785" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.24980047" />
@@ -600,64 +739,15 @@
     <MESSAGE value="Close #2" />
     <MESSAGE value="Close #3" />
     <MESSAGE value="commit" />
-    <MESSAGE value="Close 3# 4#" />
     <MESSAGE value="Close #10" />
-    <option name="LAST_COMMIT_MESSAGE" value="Close #10" />
+    <MESSAGE value="Close 3# 4#" />
+    <option name="LAST_COMMIT_MESSAGE" value="Close 3# 4#" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/repository/ReservationRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.8.RELEASE/spring-web-5.1.8.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="26">
-          <caret line="107" selection-start-line="107" selection-end-line="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1167">
-          <caret line="93" column="26" selection-start-line="93" selection-start-column="26" selection-end-line="93" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ServiceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33">
-          <caret line="51" column="50" lean-forward="true" selection-start-line="51" selection-start-column="50" selection-end-line="51" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://628cea4f-527e-4ce1-a45e-778aa2a12181/schema/barbershop/table/user_role">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/repository/UserRoleRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://628cea4f-527e-4ce1-a45e-778aa2a12181/schema/barbershop/table/users">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/slots-list.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
@@ -856,13 +946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/DataSource.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -881,16 +964,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="99" column="5" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,6 +1060,76 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="260">
+          <caret line="30" column="228" selection-start-line="30" selection-start-column="228" selection-end-line="30" selection-end-column="228" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1323" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="63">
+          <caret line="3" column="29" selection-start-line="3" selection-start-column="29" selection-end-line="3" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="5" column="8" selection-start-line="5" selection-start-column="8" selection-end-line="5" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/service/EmailServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="132" column="23" selection-start-line="132" selection-start-column="23" selection-end-line="132" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="25" column="31" selection-start-line="25" selection-start-column="31" selection-end-line="25" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://628cea4f-527e-4ce1-a45e-778aa2a12181/schema/barbershop/table/users">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/model/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="40">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
         </state>
       </provider>
     </entry>

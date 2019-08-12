@@ -1,5 +1,6 @@
 package pl.barbershop.controller;
 
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -25,12 +26,14 @@ public class UserController {
     private final UserRoleRepository userRoleRepository;
     private final PasswordEncoder passwordEncoder;
     private final ReservationRepository reservationRepository;
+    private final ApplicationEventPublisher applicationEventPublisher;
 
-    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder, ReservationRepository reservationRepository) {
+    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder, ReservationRepository reservationRepository, ApplicationEventPublisher applicationEventPublisher) {
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
         this.passwordEncoder = passwordEncoder;
         this.reservationRepository = reservationRepository;
+        this.applicationEventPublisher = applicationEventPublisher;
     }
 
     @GetMapping("/registration")
