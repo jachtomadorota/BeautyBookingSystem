@@ -42,6 +42,11 @@ public class HomePageController {
         return "homepage";
     }
 
+    @GetMapping("/access-denied")
+    public String accessDenied(){
+        return "access-denied";
+    }
+
     @GetMapping("/search")
     public String search(){
         return "search";

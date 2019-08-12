@@ -45,7 +45,7 @@ public class SecurityConfigUser extends WebSecurityConfigurerAdapter {
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .and().exceptionHandling()
-                .accessDeniedPage("/access_denied")
+                .accessDeniedPage("/access-denied")
                 .and().logout()
                 .logoutSuccessUrl("/");
         http.csrf().disable();

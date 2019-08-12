@@ -9,7 +9,6 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Choose date</title>
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <link rel="stylesheet" href="/resources/demos/style.css">
@@ -41,14 +40,29 @@
             });
         });
     </script>
+    <style>
+        body{
+            background-image: url("https://www.tailoredbarberco.com/wp-content/uploads/sites/312/2018/03/barber-background.jpg");
+            background-position: center;
+            background-size: contain;
+            height: 100%;
+        }
+        .datepicker{
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>
 
-<form method="post" align >
+<br/><br/><br/>
+<div class="datepicker">
+<form method="post" align="center" >
     <input type="text" id="datepicker" name="date"/>
     <input type="submit" value="confirm"/>
 </form>
+</div>
+
 
 </body>
 </html>

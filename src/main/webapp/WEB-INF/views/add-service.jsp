@@ -11,39 +11,73 @@
 <head>
     <title>Add/Update services</title>
     <style>
-    body:before{
-    content: '';
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    -webkit-filter: blur(10px);
-    -moz-filter: blur(10px);
-    -o-filter: blur(10px);
-    -ms-filter: blur(10px);
-    filter: blur(10px);
-    }
-    form
-    {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: 400px;
-    height: 500px;
-    padding: 80px 40px;
-    box-sizing: border-box;
-    background: rgba(0,0,0,.5);
-    }
+
+        body:before{
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            -webkit-filter: blur(10px);
+            -ms-filter: blur(10px);
+            filter: blur(10px);
+        }
+        .contact-form
+        {
+            margin-left: 30%;
+            position: center;
+            width: 550px;
+            margin-bottom: 14%;
+            height: 600px;
+            padding: 80px 40px;
+            background: rgba(0,0,0,.5);
+        }
+        .contact-form input
+        {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        .contact-form input[type="text"],
+        .contact-form input[type="password"],
+        .contact-form input[type="textarea"]
+        {
+            border: none;
+            border-bottom: 1px solid #fff;
+            background: transparent;
+            outline: none;
+            height: 40px;
+            color: #fff;
+            font-size: 16px;
+        }
+
+        .contact-form input[type="submit"] {
+            height: 30px;
+            color: #fff;
+            font-size: 15px;
+            background: red;
+            cursor: pointer;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            margin-top: 15%;
+        }
+        .contact-form label{
+            color: #aaaaaa;
+        }
+        h2 {
+            margin: 0;
+            padding: 0 0 20px;
+            color: #fff;
+            text-align: center;
+            text-transform: uppercase;
+        }
     </style>
 </head>
 <body>
 
 <%@include file="header.jsp"%>
-
+<br/>
+<br/>
+<div class="contact-form">
 <form:form method="post" modelAttribute="service" frame="box">
 
     <label for="id"></label>
@@ -64,6 +98,6 @@
 
     <input type="submit" value="Submit">
 </form:form>
-
+</div>
 </body>
 </html>

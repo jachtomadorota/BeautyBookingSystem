@@ -46,7 +46,8 @@ public class ReservationController {
     @GetMapping("/{barbershop_id}")
     public String chooseService(Model model, @PathVariable("barbershop_id") Long barbershopId) {
         model.addAttribute("barbershopId", barbershopId);
-        model.addAttribute("barbershop", barbershopRepository.getOne(barbershopId));
+        Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
+        model.addAttribute("barbershop", optionalBarbershop.get());
         model.addAttribute("service", serviceRepository.findServicesByBarbershopsId(barbershopId));
         return "barbershop-details";
     }
@@ -87,7 +88,7 @@ public class ReservationController {
             }
         }
 
-            model.addAttribute("slots", slotService.checkIsAvaible(slots));
+        model.addAttribute("slots", slotService.checkIsAvaible(slots));
 
 
         model.addAttribute("barbershopId", barbershopId);

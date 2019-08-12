@@ -20,7 +20,7 @@
         }
         li{
 
-            margin: 30px 30px 10px ;
+            margin: 20px 30px 10px ;
         }
     </style>
     <link rel="shortcut icon" type="image/x-icon" href="https://www.nicepng.com/png/detail/204-2046609_barber-logos-de-barber-png.png" />

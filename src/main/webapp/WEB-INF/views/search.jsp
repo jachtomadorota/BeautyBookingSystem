@@ -40,6 +40,7 @@
             padding: 80px 40px;
             box-sizing: border-box;
             background: rgba(0,0,0,.5);
+            color: #aaaaaa
         }
 
         .contact-form h2 {
