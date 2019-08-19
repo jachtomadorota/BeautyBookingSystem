@@ -10,27 +10,59 @@
 <html>
 <head>
     <title>User Details</title>
+    <style>
+        .contain-box {
+            margin-top: 10%;
+            margin-left: 23%;
+            position: center;
+            width: 700px;
+            margin-bottom: 14%;
+            height: 400px;
+            padding: 80px 40px;
+            background: rgba(0,0,0,.5);
+        }
+        p{
+            color: #aaaaaa;
+            align-items: center;
+
+        }
+        nav{
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>
+<br/>
+<br/>
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
+    <ul class="navbar-nav">
+        <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/user/login/panel/reservation">Reservations</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/user/login/panel/details">Account Details</a>
+        </li>
+        <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/logout">Logout</a>
+        </li>
+    </ul>
 
-<table class="table table-borderless table-dark">
-    <tr>
+</nav>
+<c:forEach var="user" items="${user}">
 
-    </tr>
-    <c:forEach var="user" items="${user}">
-        <tr>
-            <td>${user.firstName}</td>
-            <td>${user.lastName}</td>
-            <td>${user.email}</td>
-            <td>${user.phoneNumber}</td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/details/delete/${user.id}" onclick="return confirm('Are you sure you want to delete account?');">Delete</a> </td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/details/update/${user.id}" onclick="return confirm('Are you sure you want to update account?');">Update</a> </td>
-        </tr>
-    </c:forEach>
+    <div class="contain-box">
+        <b>    <p align="center">First name: ${user.firstName}</p>
+            <p align="center">Last Name : ${user.lastName}</p>
+            <p align="center">Phone number : ${user.phoneNumber}</p>
+            <p align="center">Email : ${user.email}</p>
+            <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/details/delete/${user.id}" onclick="return confirm('Are you sure you want to delete account?');">Delete</a> </p>
+            <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/details/update/${user.id}" onclick="return confirm('Are you sure you want to update account?');">Update</a> </p>
+        </b>
+    </div>
+</c:forEach>
 
-</table>
 
 
 </body>

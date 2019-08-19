@@ -13,9 +13,14 @@ import pl.barbershop.service.DateServiceImpl;
 import pl.barbershop.service.EmailServiceImpl;
 import pl.barbershop.service.SlotServiceImpl;
 
+import java.text.ParseException;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.toList;
 
 
 @Controller
@@ -58,12 +63,12 @@ public class ReservationController {
     @GetMapping("/{barbershop_id}/{service_id}")
     public String chooseDateGet(Model model, @PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId) {
         Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
-        model.addAttribute("work",optionalBarbershop.get().isWorkInSaturdays());
+        model.addAttribute("work", optionalBarbershop.get().isWorkInSaturdays());
         return "calendar";
     }
 
     @PostMapping("/{barbershop_id}/{service_id}")
-    public String chooseSlot(Model model, @PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId, @RequestParam("date") String date) {
+    public String chooseSlot(Model model, @PathVariable("barbershop_id") Long barbershopId, @PathVariable("service_id") Long serviceId, @RequestParam("date") String date) throws ParseException {
 
         String parsed = date.replace("%2F", "/");
         Optional<Barbershop> optionalBarbershop = barbershopRepository.findById(barbershopId);
@@ -73,7 +78,6 @@ public class ReservationController {
         String duration = optionalService.get().getTime();
         List<Slot> slots = new ArrayList<>();
         Date finalDate = dateRepository.checkDate(parsed);
-
         if (finalDate.getSlots().isEmpty()) {
             for (Slot slot : slotService.setSlot(open, close, duration)) {
                 slotRepository.save(slot);
@@ -81,15 +85,23 @@ public class ReservationController {
                 finalDate.setSlots(slots);
                 dateRepository.save(finalDate);
             }
-        }else{
-            for(Slot s : finalDate.getSlots()){
-                if(s.isAvaible()){
-                    slots.add(s);
+        }else {
+            List<Slot> slotList = finalDate.getSlots().stream()
+                    .filter(Slot::isAvaible)
+                    .collect(toList());
+            List<Slot> slotListDisabled = finalDate.getSlots().stream()
+                    .filter(s -> !s.isAvaible())
+                    .collect(toList());
+            String openReplaced = slotList.get(0).getTime();
+            String closeReplaced = slotList.get(slotList.size() - 1).getTime();
+                for (Slot slot : slotService.updateSlot(openReplaced, close, duration)) {
+                    slotRepository.save(slot);
+                    slots.add(slot);
                     finalDate.setSlots(slots);
                     dateRepository.save(finalDate);
                 }
             }
-        }
+
 
         model.addAttribute("slots", slotService.checkIsAvaible(slots));
 

@@ -12,10 +12,8 @@ import pl.barbershop.model.Date;
 import pl.barbershop.repository.BarbershopRepository;
 import pl.barbershop.repository.DateRepository;
 import pl.barbershop.service.DateService;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 
 @Controller
 public class HomePageController {
@@ -38,6 +36,7 @@ public class HomePageController {
                 dateRepository.save(date);
             }
         }
+
         model.addAttribute("barbershops",barbershopRepository.findAll());
         return "homepage";
     }
