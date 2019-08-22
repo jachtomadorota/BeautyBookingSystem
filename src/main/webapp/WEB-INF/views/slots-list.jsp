@@ -29,7 +29,6 @@
         }
         a{
             align-items: center;
-            color: ;
         }
     </style>
 </head>

@@ -89,18 +89,18 @@ public class ReservationController {
             List<Slot> slotList = finalDate.getSlots().stream()
                     .filter(Slot::isAvaible)
                     .collect(toList());
-            List<Slot> slotListDisabled = finalDate.getSlots().stream()
-                    .filter(s -> !s.isAvaible())
-                    .collect(toList());
+
             String openReplaced = slotList.get(0).getTime();
             String closeReplaced = slotList.get(slotList.size() - 1).getTime();
-                for (Slot slot : slotService.updateSlot(openReplaced, close, duration)) {
+
+                for (Slot slot : slotService.updateSlot(openReplaced, closeReplaced, duration)) {
                     slotRepository.save(slot);
                     slots.add(slot);
                     finalDate.setSlots(slots);
                     dateRepository.save(finalDate);
                 }
             }
+
 
 
         model.addAttribute("slots", slotService.checkIsAvaible(slots));
