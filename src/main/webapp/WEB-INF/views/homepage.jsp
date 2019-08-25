@@ -47,8 +47,8 @@
              <p align="center">City :  ${barbershops.city}</p>
              <p align="center">Phone Number :  ${barbershops.phoneNumber}</p>
              <p align="center">Email  :  ${barbershops.email}</p>
-             <p align="center">Open at : ${barbershops.open}</p>
-             <p align="center">Close at : ${barbershops.close}</p>
+             <p align="center">Open at  ${barbershops.open}</p>
+             <p align="center">Close at ${barbershops.close}</p>
             <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Make reservation</a> </p>
 </b>
 </div>

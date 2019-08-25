@@ -8,9 +8,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import pl.barbershop.model.Slot;
 import pl.barbershop.model.User;
 import pl.barbershop.model.UserRole;
 import pl.barbershop.repository.ReservationRepository;
+import pl.barbershop.repository.SlotRepository;
 import pl.barbershop.repository.UserRepository;
 import pl.barbershop.repository.UserRoleRepository;
 
@@ -26,14 +28,15 @@ public class UserController {
     private final UserRoleRepository userRoleRepository;
     private final PasswordEncoder passwordEncoder;
     private final ReservationRepository reservationRepository;
-    private final ApplicationEventPublisher applicationEventPublisher;
+    private final SlotRepository slotRepository;
 
-    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder, ReservationRepository reservationRepository, ApplicationEventPublisher applicationEventPublisher) {
+
+    public UserController(UserRepository userRepository, UserRoleRepository userRoleRepository, PasswordEncoder passwordEncoder, ReservationRepository reservationRepository, SlotRepository slotRepository) {
         this.userRepository = userRepository;
         this.userRoleRepository = userRoleRepository;
         this.passwordEncoder = passwordEncoder;
         this.reservationRepository = reservationRepository;
-        this.applicationEventPublisher = applicationEventPublisher;
+        this.slotRepository = slotRepository;
     }
 
     @GetMapping("/registration")
@@ -83,7 +86,6 @@ public class UserController {
 
     @GetMapping("/login/panel/details/update/{id}")
     public String updateUserGet(Model model,@PathVariable Long id){
-
         model.addAttribute("user",userRepository.getOne(id));
         return "registration-user";
     }
@@ -94,7 +96,7 @@ public class UserController {
             return "registration-user";
         }
         userRepository.save(user);
-        return "redirect:/";
+        return "redirect:/user/login/panel/details";
     }
 
     @GetMapping("/login/panel/reservation")
@@ -108,6 +110,8 @@ public class UserController {
         }
         return "redirect:/login";
     }
+
+
 
 
 }

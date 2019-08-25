@@ -1,6 +1,9 @@
 package pl.barbershop.model;
 
 
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
 import org.hibernate.annotations.Proxy;
 
 import javax.persistence.*;
@@ -14,15 +17,25 @@ public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH, CascadeType.REMOVE})
     private User user;
-    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
     private Barbershop barbershop;
-    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
     private Date date;
-    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+
+    @OnDelete(action = OnDeleteAction.CASCADE)
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
     private Service service;
-    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH})
+
+    @OneToOne(cascade={CascadeType.MERGE,CascadeType.REFRESH,CascadeType.REMOVE})
+    @OnDelete(action = OnDeleteAction.CASCADE)
     private Slot slot;
 
     public Long getId() {

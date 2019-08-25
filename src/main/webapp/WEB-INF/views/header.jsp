@@ -47,6 +47,9 @@
             <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/login">Login</a>
         </li>
         <li class="nav-item active">
+            <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/logout">Logout</a>
+        </li>
+        <li class="nav-item active">
             <a class="nav-link" href="http://localhost:8080/barbershop_war_exploded/search">Search</a>
         </li>
         <li class="nav-item active">

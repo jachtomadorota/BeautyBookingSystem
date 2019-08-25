@@ -85,7 +85,9 @@ public class ReservationController {
                 finalDate.setSlots(slots);
                 dateRepository.save(finalDate);
             }
-        }else {
+            model.addAttribute("slots", slotService.checkIsAvaible(slots));
+
+        }else{
             List<Slot> slotList = finalDate.getSlots().stream()
                     .filter(Slot::isAvaible)
                     .collect(toList());
@@ -102,12 +104,11 @@ public class ReservationController {
                         slots.add(slot);
                         finalDate.setSlots(slots);
                         dateRepository.save(finalDate);
-                    }else{
-                        slotRepository.save(slot);
-                        slots.add(slot);
-                        finalDate.setSlots(slots);
-                        dateRepository.save(finalDate);
                     }
+                    model.addAttribute("slots", slotService.checkIsAvaible(slots));
+
+                }else{
+                    model.addAttribute("slots", slots);
                 }
             }
         }
@@ -159,4 +160,6 @@ public class ReservationController {
         return "login";
 
     }
+
+
 }

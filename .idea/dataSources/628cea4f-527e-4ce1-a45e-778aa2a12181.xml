@@ -1252,30 +1252,35 @@ services_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>barbershops</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="307" parent="248" name="FK7v0m0k51eg5cfi3186604rp2v">
       <ColNames>date_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>dates</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="308" parent="248" name="FK3ww618ll729ubr3pb5krt9d3h">
       <ColNames>service_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>services</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="309" parent="248" name="FKgbn8ggqmrx2jmwu6cmolrtavv">
       <ColNames>slot_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>slots</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <foreign-key id="310" parent="248" name="FKb5g9io5h54iwl2inkno50ppln">
       <ColNames>user_id</ColNames>
       <RefSchemaName>barbershop</RefSchemaName>
       <RefTableName>users</RefTableName>
       <RefColNames>id</RefColNames>
+      <OnDelete>cascade</OnDelete>
     </foreign-key>
     <column id="311" parent="249" name="id">
       <Position>1</Position>

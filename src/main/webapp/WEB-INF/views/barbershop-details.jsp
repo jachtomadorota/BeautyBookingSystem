@@ -43,6 +43,7 @@
             <p align="center">Email  : ${barbershops.email}</p>
             <p align="center">Open at : ${barbershops.open}</p>
             <p align="center">Close at  : ${barbershops.close}</p>
+            <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/barbershop/login/panel/details/update/${barbershops.id}">Update</a> </p>
         </b>
     </div>
 </c:forEach>

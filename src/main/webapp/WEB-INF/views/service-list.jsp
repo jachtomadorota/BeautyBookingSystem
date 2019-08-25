@@ -41,7 +41,7 @@
 
     <div class="contain-box">
         <b> <p align="center">Name   : ${service.name}</p>
-            <p align="center">Price  : ${service.price}</p>
+            <p align="center">Price  : ${service.price}PLN</p>
             <p align="center">Time  : ${service.time} min</p>
         </b>
     </div>

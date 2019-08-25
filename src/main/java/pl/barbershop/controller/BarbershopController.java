@@ -63,6 +63,22 @@ public class BarbershopController {
         return "redirect:/";
     }
 
+    @GetMapping("/login/panel/details/update/{id}")
+    public String updateUserGet(Model model,@PathVariable Long id){
+        model.addAttribute("barbershop",barbershopRepository.getOne(id));
+        return "registration-barbershop";
+    }
+
+    @PostMapping("/login/panel/details/update/{id}")
+    public String updateUserPost(@PathVariable Long id, @Valid Barbershop barbershop,BindingResult bindingResult){
+        if(bindingResult.hasErrors()){
+            return "registration-barbershop";
+        }
+        barbershop.setPassword(BCrypt.hashpw(barbershop.getPassword(),BCrypt.gensalt()));
+        barbershopRepository.save(barbershop);
+        return "redirect:/barbershop/login/panel/details";
+    }
+
 
 
     @GetMapping("/login/panel")
@@ -108,7 +124,7 @@ public class BarbershopController {
             Barbershop barbershop = barbershopRepository.findByEmail(username);
             if (barbershop != null) {
                 model.addAttribute("reservations", reservationRepository.findbyBarbershopId(barbershop.getId()));
-                return "reservation-list";
+                return "reservation-barbershop";
             } else {
                 return "redirect:/login";
             }
