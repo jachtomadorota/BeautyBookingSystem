@@ -10,43 +10,7 @@
 <html>
 <head>
     <title>Access Denied</title>
-    <style>
-        body{
-            background-image: url("https://www.tailoredbarberco.com/wp-content/uploads/sites/312/2018/03/barber-background.jpg");
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size:cover;
-        }
-        body:before{
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            -webkit-filter: blur(10px);
-            -ms-filter: blur(10px);
-            filter: blur(10px);
-        }
-        .contact-form
-        {
-            margin-left: 25%;
-            position: center;
-            width: 550px;
-            margin-bottom: 14%;
-            height: 100px;
-            padding: 80px 40px;
-            background: rgba(0,0,0,.5);
-        }
-        h2 {
-            margin: 0;
-            padding: 0 0 20px;
-            color: #fff;
-            text-align: center;
-        }
-        h3{
-            color: #fff;
-            text-align: center;
-        }
-    </style>
+    <link href="<c:url value="/static/css/access-denied.css" />" rel="stylesheet">
 </head>
 <body>
 <br/><br/>

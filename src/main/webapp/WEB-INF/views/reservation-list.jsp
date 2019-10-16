@@ -10,27 +10,8 @@
 <html>
 <head>
     <title>Reservations</title>
-    <style>
-        .contain-box
-        {
-            margin-top: 10%;
-            margin-left: 23%;
-            position: center;
-            width: 700px;
-            margin-bottom: 14%;
-            height: 500px;
-            padding: 80px 40px;
-            background: rgba(0,0,0,.5);
-        }
-        p{
-            color: #aaaaaa;
-            align-items: center;
+    <link href="<c:url value="/static/css/reservation-list.css" />" rel="stylesheet">
 
-        }
-        nav{
-            align-items: center;
-        }
-    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>

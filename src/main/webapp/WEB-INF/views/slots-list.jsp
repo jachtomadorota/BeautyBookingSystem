@@ -10,27 +10,8 @@
 <html>
 <head>
     <title>Slots</title>
-    <style>
-        .contain-box
-        {
-            margin-left: 38%;
-            position: center;
-            width: 300px;
-            margin-bottom: 14%;
-            height: 30px;
-            padding: 80px 40px;
-            background: rgba(0,0,0,.5);
-            align-items: center;
-        }
-        p{
-            color: #aaaaaa;
-            align-items: center;
-            margin-bottom: 10%;
-        }
-        a{
-            align-items: center;
-        }
-    </style>
+    <link href="<c:url value="/static/css/slots-list.css" />" rel="stylesheet">
+
 </head>
 <body>
 <%@include file="header.jsp"%>

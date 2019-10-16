@@ -10,26 +10,8 @@
 <html>
 <head>
     <title>Services</title>
-    <style>
-        .contain-box
-        {
-            margin-left: 23%;
-            position: center;
-            width: 700px;
-            margin-bottom: 14%;
-            height: 300px;
-            padding: 80px 40px;
-            background: rgba(0,0,0,.5);
-        }
-        p{
-            color: #aaaaaa;
-            align-items: center;
+    <link href="<c:url value="/static/css/service.list.css" />" rel="stylesheet">
 
-        }
-        a{
-            color: #333333;
-        }
-    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>

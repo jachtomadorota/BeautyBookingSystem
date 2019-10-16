@@ -7,72 +7,13 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <html>
 <head>
     <title>Registration as a User</title>
-    <style>
+    <link href="<c:url value="/static/css/registration-user.css" />" rel="stylesheet">
 
-        body:before{
-            -webkit-background-size: cover;
-            -moz-background-size: cover;
-            -o-background-size: cover;
-            background-size: cover;
-            -webkit-filter: blur(10px);
-            -ms-filter: blur(10px);
-            filter: blur(10px);
-        }
-        .contact-form
-        {
-            margin-top: 4%;
-            position: center;
-            width: 550px;
-            margin-left: 30%;
-            margin-bottom: 14%;
-            height: 850px;
-            padding: 80px 40px;
-            background: rgba(0,0,0,.5);
-        }
-        .contact-form input
-        {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .contact-form input[type="text"],
-        .contact-form input[type="password"],
-        .contact-form input[type="textarea"]
-        {
-            border: none;
-            border-bottom: 1px solid #fff;
-            background: transparent;
-            outline: none;
-            height: 40px;
-            color: #fff;
-            font-size: 16px;
-        }
-
-        .contact-form input[type="submit"] {
-            height: 30px;
-            color: #fff;
-            font-size: 15px;
-            background: red;
-            cursor: pointer;
-            border-radius: 25px;
-            border: none;
-            outline: none;
-            margin-top: 15%;
-        }
-        .contact-form label{
-            color: #aaaaaa;
-        }
-        h2 {
-            margin: 0;
-            padding: 0 0 20px;
-            color: #fff;
-            text-align: center;
-            text-transform: uppercase;
-        }
-    </style>
 </head>
 <body>
 <%@include file="header.jsp"%>

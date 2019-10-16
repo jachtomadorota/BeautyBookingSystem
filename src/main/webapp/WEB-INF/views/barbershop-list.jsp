@@ -10,38 +10,29 @@
 <html>
 <head>
     <title>List of Barbershops</title>
+    <link href="<c:url value="/static/css/barbershop-details.css" />" rel="stylesheet">
+
 </head>
 <body>
 
 <%@include file="header.jsp"%>
 
-<table class="table table-borderless table-dark">
-    <tr>
-        <th>Address</th>
-        <th>City</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Description</th>
-        <th>NIP</th>
-        <th>Open</th>
-        <th>Close</th>
+<br/>
+<br/>
+<c:forEach var="barbershops" items="${barbershops}">
 
-
-    </tr>
-    <c:forEach var="barbershops" items="${barbershop}">
-        <tr>
-            <td>${barbershops.address}</td>
-            <td>${barbershops.city}</td>
-            <td>${barbershops.phoneNumber}</td>
-            <td>${barbershops.email}</td>
-            <td>${barbershops.description}</td>
-            <td>${barbershops.nip}</td>
-            <td>${barbershops.open}</td>
-            <td>${barbershops.close}</td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Zarezerwuj wizytę</a> </td>
-        </tr>
-    </c:forEach>
-</table>
+    <div class="contain-box">
+        <b>    <p align="center">Name :  ${barbershops.name}</p>
+            <p align="center">Address :  ${barbershops.address}</p>
+            <p align="center">City :  ${barbershops.city}</p>
+            <p align="center">Phone Number :  ${barbershops.phoneNumber}</p>
+            <p align="center">Email  :  ${barbershops.email}</p>
+            <p align="center">Open at  ${barbershops.open}</p>
+            <p align="center">Close at ${barbershops.close}</p>
+            <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Make Reservation</a> </p>
+        </b>
+    </div>
+</c:forEach>
 
 
 </body>

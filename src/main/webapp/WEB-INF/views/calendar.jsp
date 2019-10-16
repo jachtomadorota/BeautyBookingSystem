@@ -6,6 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <!DOCTYPE HTML>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -40,17 +42,8 @@
             });
         });
     </script>
-    <style>
-        body{
-            background-image: url("https://www.tailoredbarberco.com/wp-content/uploads/sites/312/2018/03/barber-background.jpg");
-            background-position: center;
-            background-size: contain;
-            height: 100%;
-        }
-        .datepicker{
-            align-items: center;
-        }
-    </style>
+    <link href="<c:url value="/static/css/calendar.css" />" rel="stylesheet">
+
 </head>
 <body>
 <%@include file="header.jsp"%>
