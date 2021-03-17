@@ -11,43 +11,33 @@
 <html>
 <head>
     <title>Homepage</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <link href="<c:url value="/static/css/homepage.css" />" rel="stylesheet">
+
 </head>
 <body>
+<%@include file="header.jsp"%>
 
-<h2><a href="http://localhost:8080/barbershop_war_exploded/user/registration">Rejestracja jako użytkownik</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/barbershop/registration">Rejestracja jako barber</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako użytkownik</a> </h2>
-<h2><a href="http://localhost:8080/barbershop_war_exploded/login">Logowanie jako barber</a> </h2>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<c:forEach var="barbershops" items="${barbershops}">
 
-
-<table border="1">
-    <tr>
-        <th>Address</th>
-        <th>City</th>
-        <th>Phone Number</th>
-        <th>Email</th>
-        <th>Description</th>
-        <th>NIP</th>
-        <th>Open</th>
-        <th>Close</th>
-
-
-    </tr>
-    <c:forEach var="barbershops" items="${barbershops}">
-        <tr>
-            <td>${barbershops.address}</td>
-            <td>${barbershops.city}</td>
-            <td>${barbershops.phoneNumber}</td>
-            <td>${barbershops.email}</td>
-            <td>${barbershops.description}</td>
-            <td>${barbershops.nip}</td>
-            <td>${barbershops.open}</td>
-            <td>${barbershops.close}</td>
-            <td><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Zarezerwuj wizytę</a> </td>
-        </tr>
-    </c:forEach>
-</table>
-
+<div class="contain-box">
+<b>    <p align="center">Name :  ${barbershops.name}</p>
+             <p align="center">Address :  ${barbershops.address}</p>
+             <p align="center">City :  ${barbershops.city}</p>
+             <p align="center">Phone Number :  ${barbershops.phoneNumber}</p>
+             <p align="center">Email  :  ${barbershops.email}</p>
+             <p align="center">Open at  ${barbershops.open}</p>
+             <p align="center">Close at ${barbershops.close}</p>
+            <p align="center"><a href="http://localhost:8080/barbershop_war_exploded/user/login/panel/barbershop/reservation/${barbershops.id}">Make reservation</a> </p>
+</b>
+</div>
+</c:forEach>
 
 </body>
 </html>

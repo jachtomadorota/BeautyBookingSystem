@@ -8,7 +8,7 @@ public class DataSource extends BasicDataSource {
     public DataSource() {
         setDriverClassName("com.mysql.cj.jdbc.Driver");
         setUrl("jdbc:mysql://localhost:3306/barbershop?serverTimezone=UTC");
-        setUsername("root");
-        setPassword("coderslab");
+        setUsername("dorota");
+        setPassword("dupa1234");
     }
 }

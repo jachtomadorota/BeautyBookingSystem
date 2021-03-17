@@ -1,0 +1,11 @@
+body{
+    background-image: url("https://www.tailoredbarberco.com/wp-content/uploads/sites/312/2018/03/barber-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover;
+    background-attachment: fixed;
+}
+li{
+
+    margin: 20px 30px 10px ;
+}

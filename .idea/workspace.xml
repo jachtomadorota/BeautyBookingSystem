@@ -5,67 +5,13 @@
       <artifact name="barbershop:war exploded" />
     </artifacts-to-build>
   </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="ALL" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="82175a9c-b656-418b-aca3-5cae0043ad2d" name="Default Changelist" comment="Close 3# 4#">
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reservation-barbershop.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/628cea4f-527e-4ce1-a45e-778aa2a12181.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/628cea4f-527e-4ce1-a45e-778aa2a12181.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/BarbershopController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/BarbershopController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/model/Reservation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/barbershop/repository/ReservationRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/barbershop/repository/ReservationRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/barbershop-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/header.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/homepage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reservation-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/reservation-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/service-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/service-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-panel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/user-panel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigBarbershop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigBarbershop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/SecurityConfigUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/BarberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/BarbershopController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/BarbershopController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/HomePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Barber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Barbershop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Barbershop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Date.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Date.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/repository/BarberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/repository/BarbershopRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/classes/pl/barbershop/repository/BarbershopRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/add-barber.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barber-list.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-panel.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/barbershop-panel.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/homepage.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/homepage.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/login-barbershop.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/login-user.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/registration-barbershop.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/registration-barbershop.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/registration-user.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/barbershop-1.0-SNAPSHOT/WEB-INF/views/registration-user.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/AppConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/AppConfig.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/SecurityConfigBarbershop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/SecurityConfigBarbershop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/SecurityConfigUser.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/SecurityConfigUser.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/BarberController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/BarbershopController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/BarbershopController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/HomePageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/HomePageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Barber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Barbershop.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Barbershop.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Date.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Date.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Reservation.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Service.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/model/Service.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/model/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/model/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/repository/BarberRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/barbershop/repository/BarbershopRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/barbershop/repository/BarbershopRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/barbershop.iml" beforeDir="false" />
     </list>
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/target/" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -115,22 +61,6 @@
   </component>
   <component name="DefaultGradleProjectSettings">
     <option name="isMigrated" value="true" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/pl/barbershop/controller/ReservationController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="35">
-              <caret line="101" column="109" selection-start-line="101" selection-start-column="109" selection-end-line="101" selection-end-column="109" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -214,13 +144,6 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
-  </component>
   <component name="MavenProjectNavigator">
     <treeState>
       <expand>
@@ -243,6 +166,7 @@
     <option name="width" value="1161" />
     <option name="height" value="641" />
   </component>
+  <component name="ProjectId" id="1pu1qx33MVdDUnm4LZze7XTQjbO" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -386,6 +310,10 @@
       </pane>
     </panes>
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -416,18 +344,6 @@
       <recent name="$PROJECT_DIR$/src/main/webapp" />
       <recent name="$PROJECT_DIR$/src/main/webapp/static/css" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration name="Tomcat 9.0.17" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.17" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
@@ -480,6 +396,21 @@
           <option name="PROGRAM_PARAMETERS" value="" />
         </SHUTDOWN>
       </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Profile">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
       <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
         <option name="USE_ENV_VARIABLES" value="true" />
         <STARTUP>
@@ -503,6 +434,7 @@
       </method>
     </configuration>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -527,6 +459,7 @@
       <workItem from="1565451913061" duration="65433000" />
       <workItem from="1565867695711" duration="65409000" />
       <workItem from="1566659119784" duration="12781000" />
+      <workItem from="1616018357551" duration="726000" />
     </task>
     <task id="LOCAL-00001" summary="add modeles, add HomePage UserController, BarbershopController and views for user login">
       <created>1564309146328</created>
@@ -692,29 +625,14 @@
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="RECENTLY_FILTERED_USER_GROUPS">
-                <collection />
-              </option>
-              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
-                <collection />
-              </option>
-              <option name="COLUMN_ORDER">
-                <list>
-                  <option value="0" />
-                  <option value="1" />
-                  <option value="2" />
-                  <option value="3" />
-                </list>
-              </option>
-            </State>
+            <State />
           </value>
         </entry>
       </map>
@@ -733,6 +651,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add modeles, add HomePage UserController, BarbershopController and views for user login" />
